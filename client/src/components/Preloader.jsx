@@ -1,4 +1,5 @@
 import { useLayoutEffect, useRef, useState } from "react";
+import BrandMark from "./BrandMark.jsx";
 
 const SESSION_KEY = "esgrow:home-intro-seen:v1";
 const WORDS = ["From", "Roots", "To", "Results,", "ESGROW®"];
@@ -135,6 +136,7 @@ export default function Preloader({ enabled = false }) {
         aria-live="polite"
         aria-label="From Roots To Results, ESGROW®"
       >
+        <BrandMark className="preloader-brand-mark" size={80} />
         <p className="preloader-copy" aria-hidden="true">
           {WORDS.map((word, index) => (
             <span className="preloader-word-mask" key={word}>

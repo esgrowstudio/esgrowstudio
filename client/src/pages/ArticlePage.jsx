@@ -3,6 +3,7 @@ import articles from "../data/articles.json";
 import NotFoundPage from "./NotFoundPage.jsx";
 import EditorialImage from "../components/EditorialImage.jsx";
 import { articleVisuals } from "../data/visuals.js";
+import BrandMark from "../components/BrandMark.jsx";
 export default function ArticlePage() {
   const { slug } = useParams(),
     article = articles.find((a) => a.slug === slug);
@@ -27,7 +28,7 @@ export default function ArticlePage() {
         </p>
         <h1>{article.title}</h1>
         <div className="article-byline">
-          <span className="brand-mark">✿</span>
+          <BrandMark className="article-brand-mark" size={38} />
           <span>
             Esgrow Studio
             <br />

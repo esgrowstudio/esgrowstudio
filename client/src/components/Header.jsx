@@ -1,30 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import BrandMark from "./BrandMark.jsx";
+import useHeaderContrast from "../hooks/useHeaderContrast.js";
 
 export function Brand() {
   return (
     <Link to="/" className="brand" aria-label="Esgrow Studio home">
-      <svg
-        className="brand-emblem"
-        viewBox="0 0 48 48"
-        fill="none"
-        aria-hidden="true"
-      >
-        <path
-          d="M8 9h33l-7 8H15L8 25h25l-7 8H11l-4 7h25l-7 5H2l6-12 7-8H2l6-8Z"
-          fill="currentColor"
-        />
-        <path
-          d="M12 30C17 8 31 17 46 3c-2 18-12 29-34 27Z"
-          fill="#9bd52a"
-          stroke="white"
-          strokeWidth="1.5"
-        />
-        <path d="M12 30 36 13" stroke="#376a20" strokeWidth="1.5" />
-      </svg>
-      <span className="brand-type">
+      <BrandMark className="brand-logo" />
+      <span className="brand-type" data-adaptive-ink>
         <span>
-          ES<span>GROW</span>
+          ES<span>GROW</span> STUDIO
         </span>
         <small>FROM ROOTS TO RESULTS</small>
       </span>
@@ -35,6 +20,8 @@ export default function Header() {
   const [open, setOpen] = useState(false),
     [scrolled, setScrolled] = useState(false);
   const { pathname } = useLocation();
+  const headerRef = useRef(null);
+  useHeaderContrast(headerRef, pathname);
   const [overHero, setOverHero] = useState(pathname === "/");
   useEffect(() => setOpen(false), [pathname]);
   useEffect(() => {
@@ -62,6 +49,7 @@ export default function Header() {
   }, [pathname]);
   return (
     <header
+      ref={headerRef}
       className={[
         "liquid-header",
         scrolled && "is-scrolled",
@@ -86,6 +74,7 @@ export default function Header() {
         ].map(([name, to]) => (
           <NavLink
             key={name}
+            data-adaptive-ink
             to={to}
             end={to === "/"}
             onClick={() => setOpen(false)}
@@ -94,11 +83,12 @@ export default function Header() {
           </NavLink>
         ))}
       </nav>
-      <Link className="button small" to="/contact">
+      <Link className="button small" to="/contact" data-adaptive-ink>
         Let’s talk <span>↗</span>
       </Link>
       <button
         className="menu-toggle"
+        data-adaptive-ink
         aria-controls="main-navigation"
         aria-expanded={open}
         aria-label={open ? "Close navigation" : "Open navigation"}

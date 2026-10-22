@@ -1,4 +1,5 @@
 import { useState } from "react";
+import BrandMark from "./BrandMark.jsx";
 export default function ServiceVisual({ slug }) {
   const [selected, setSelected] = useState(0);
   return (
@@ -14,7 +15,10 @@ export default function ServiceVisual({ slug }) {
             <i />
           </div>
           <div className={"design-canvas tone-" + selected}>
-            <span className="mini-logo">esgrow®</span>
+            <span className="mini-logo">
+              <BrandMark className="mini-brand-mark" size={22} />
+              ESGROW
+            </span>
             <p>
               Good things.
               <br />
@@ -107,7 +111,10 @@ export default function ServiceVisual({ slug }) {
             </span>
           </div>
           <div className="social-caption">
-            <span>✿ esgrow studio</span>
+            <span className="social-studio-brand">
+              <BrandMark className="mini-brand-mark" size={22} />
+              esgrow studio
+            </span>
             <p>A story worth stopping for.</p>
             <div>♡ &nbsp; ◌ &nbsp; ↗</div>
           </div>

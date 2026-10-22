@@ -4,10 +4,10 @@ export default function GrowthVisual({ compact = false }) {
       <div className="growth-orbit orbit-one" aria-hidden="true" />
       <div className="growth-orbit orbit-two" aria-hidden="true" />
       <img
-        src="/assets/growth-sculpture.png"
-        alt="A silver E sculpture woven with a living green leaf, rooted in moss — ideas brought to life."
-        width="1536"
-        height="1024"
+        src="/assets/brand/esgrow-mark.png"
+        alt="Esgrow's silver and gold E emblem wrapped in a vibrant green leaf."
+        width="1254"
+        height="1254"
         fetchPriority={compact ? "auto" : "high"}
       />
       {!compact && (
