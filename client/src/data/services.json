@@ -1,0 +1,218 @@
+[
+  {
+    "slug": "web-design",
+    "name": "Web design",
+    "headline": "Design that feels like you.",
+    "description": "We turn your brand into a thoughtful, easy-to-use digital experience. Clear journeys, considered typography and purposeful interactions help people find their next step.",
+    "deliverables": [
+      "Discovery and audience research",
+      "Information architecture and user journeys",
+      "Responsive UI design and interactive prototypes",
+      "Accessible components and developer handoff"
+    ],
+    "image": "bloom",
+    "note": "Design systems, page layouts and prototypes are agreed before development.",
+    "faqs": [
+      {
+        "q": "Who is this for?",
+        "a": "New brands, growing businesses and teams whose current website no longer represents them."
+      },
+      {
+        "q": "Does this include development?",
+        "a": "Design can stand alone or be paired with our website development service. We define the scope in your proposal."
+      }
+    ]
+  },
+  {
+    "slug": "website-development",
+    "name": "Website development",
+    "headline": "A website with a solid foundation.",
+    "description": "We build responsive websites that balance memorable design with fast, dependable everyday use. From a focused business site to an e-commerce experience, the build follows your goals.",
+    "deliverables": [
+      "Frontend development and responsive layouts",
+      "CMS or e-commerce integration where agreed",
+      "Performance and accessibility checks",
+      "Launch support and handover documentation"
+    ],
+    "image": "services",
+    "note": "Platform, integrations, hosting and ownership are agreed before the build.",
+    "faqs": [
+      {
+        "q": "Can you rebuild an existing site?",
+        "a": "Yes. We begin by reviewing the current content, platform and migration requirements."
+      },
+      {
+        "q": "Can our team edit the website?",
+        "a": "We can include a suitable CMS and a practical handover in the agreed scope."
+      }
+    ]
+  },
+  {
+    "slug": "seo",
+    "name": "SEO & organic growth",
+    "headline": "Grow visibility with intention.",
+    "description": "We connect technical foundations, search intent and useful content so your website can reach people who are already looking for what you offer. Organic growth is a continuous process, not a one-time switch.",
+    "deliverables": [
+      "Technical and content audit",
+      "Keyword and search-intent mapping",
+      "On-page recommendations and content planning",
+      "Measurement and ongoing prioritisation"
+    ],
+    "image": "studio",
+    "note": "Search rankings and traffic are not guaranteed; we report the work, signals and next priorities.",
+    "faqs": [
+      {
+        "q": "When will we see results?",
+        "a": "Timing depends on competition, site history and implementation. We agree realistic milestones after an initial review."
+      },
+      {
+        "q": "Do you support local businesses?",
+        "a": "Local search visibility and location content can be included in your plan."
+      }
+    ]
+  },
+  {
+    "slug": "digital-strategy",
+    "name": "Digital strategy",
+    "headline": "Connect the dots before you build.",
+    "description": "We bring your brand, audience, channels and business goals into one practical plan. The result is a focused roadmap that helps your team decide what to do, why it matters and how to measure progress.",
+    "deliverables": [
+      "Business and audience discovery",
+      "Customer journey and channel review",
+      "Prioritised opportunity roadmap",
+      "Measurement framework and delivery plan"
+    ],
+    "image": "services",
+    "note": "You receive recommendations and a roadmap; implementation can be scoped separately.",
+    "faqs": [
+      {
+        "q": "Do we need a complete rebrand?",
+        "a": "Not necessarily. We start with what already works and identify the gaps."
+      },
+      {
+        "q": "Can you work with our existing team?",
+        "a": "Yes. Strategy can guide your internal team, existing partners or an Esgrow delivery engagement."
+      }
+    ]
+  },
+  {
+    "slug": "social-media",
+    "name": "Social media management",
+    "headline": "A more connected social presence.",
+    "description": "We help brands communicate consistently with content that fits their audience and identity. Planning, creative direction and publishing work together so your social presence feels considered.",
+    "deliverables": [
+      "Channel and audience review",
+      "Content pillars and editorial calendar",
+      "Creative production and publishing support",
+      "Community workflow and performance reviews"
+    ],
+    "image": "bloom",
+    "note": "Channels, posting volume, moderation hours and approval steps are defined in the proposal.",
+    "faqs": [
+      {
+        "q": "Is paid advertising included?",
+        "a": "Paid campaigns are scoped separately under ads and performance marketing."
+      },
+      {
+        "q": "Will we approve content?",
+        "a": "Yes. We agree a review and approval workflow before publishing."
+      }
+    ]
+  },
+  {
+    "slug": "performance-marketing",
+    "name": "Ads & performance marketing",
+    "headline": "Creative meets commercial thinking.",
+    "description": "We plan and refine campaigns around a clear audience, offer and conversion journey. Meta and other agreed ad platforms connect with landing pages, creative testing and meaningful measurement.",
+    "deliverables": [
+      "Account and conversion journey review",
+      "Audience, offer and campaign planning",
+      "Ad creative testing and landing-page recommendations",
+      "Budget pacing, reporting and optimisation"
+    ],
+    "image": "services",
+    "note": "Ad spend is separate from agency fees. Performance depends on your offer, market, creative and measurement quality.",
+    "faqs": [
+      {
+        "q": "Do you guarantee sales or ROAS?",
+        "a": "No. We agree goals, test assumptions and report outcomes transparently."
+      },
+      {
+        "q": "Who owns the advertising accounts?",
+        "a": "Your business should retain ownership. We work through the access you authorise."
+      }
+    ]
+  },
+  {
+    "slug": "hosting-cloud",
+    "name": "Web hosting & cloud",
+    "headline": "Built to stay connected.",
+    "description": "We help you select, configure and manage hosting suited to your website. Deployment, DNS, backups and monitoring are considered together so there is a clear plan for day-to-day operation.",
+    "deliverables": [
+      "Hosting and infrastructure assessment",
+      "Domain, DNS and deployment configuration",
+      "Backup and restore planning",
+      "Monitoring and operational documentation"
+    ],
+    "image": "studio",
+    "note": "Provider charges, renewal costs, support hours and any availability commitments are specified in your agreement.",
+    "faqs": [
+      {
+        "q": "Can you migrate our site?",
+        "a": "Yes, subject to a review of the existing platform, access and data requirements."
+      },
+      {
+        "q": "Is hosting included with development?",
+        "a": "It can be bundled or billed separately. Your proposal will make the arrangement clear."
+      }
+    ]
+  },
+  {
+    "slug": "branding-content",
+    "name": "Branding & content",
+    "headline": "A brand people can recognise.",
+    "description": "We shape the words and visual cues that connect your business with its audience. Identity and content work together across your website, social channels and campaigns.",
+    "deliverables": [
+      "Brand discovery and positioning",
+      "Visual identity and creative direction",
+      "Messaging and website copy",
+      "Content guidelines and reusable assets"
+    ],
+    "image": "forma",
+    "note": "Deliverables, revision rounds, asset licensing and final ownership are recorded in the project scope.",
+    "faqs": [
+      {
+        "q": "Can you work with our existing identity?",
+        "a": "Yes. We can evolve your current direction or develop a new identity where needed."
+      },
+      {
+        "q": "Do you write website content?",
+        "a": "Website messaging and copywriting can be included as a defined deliverable."
+      }
+    ]
+  },
+  {
+    "slug": "maintenance-support",
+    "name": "Maintenance & support",
+    "headline": "Care that continues after launch.",
+    "description": "Your website needs attention as your business changes. We help with planned updates, fixes and routine care, with a clear process for requests and priorities.",
+    "deliverables": [
+      "Platform and dependency updates where applicable",
+      "Content changes and bug fixes",
+      "Backup and health checks",
+      "Support queue and improvement recommendations"
+    ],
+    "image": "studio",
+    "note": "Response times, included hours, emergency coverage and third-party costs depend on the agreed support plan.",
+    "faqs": [
+      {
+        "q": "Can you maintain a site you did not build?",
+        "a": "We first review the platform, codebase and access, then confirm what we can support."
+      },
+      {
+        "q": "Is support available around the clock?",
+        "a": "Only if specifically agreed. Standard coverage and escalation procedures are set out in your plan."
+      }
+    ]
+  }
+]

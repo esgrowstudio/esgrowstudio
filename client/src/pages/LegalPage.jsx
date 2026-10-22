@@ -1,0 +1,37 @@
+import { Link, useParams } from "react-router-dom";
+import policies from "../data/policies.json";
+export default function LegalPage({ type }) {
+  const policy = policies[type];
+  return (
+    <section className="document-layout page-wrap">
+      <aside>
+        <span className="eyebrow">THE LITTLE THINGS</span>
+        {Object.entries(policies).map(([slug, item]) => (
+          <Link
+            aria-current={slug === type ? "page" : undefined}
+            key={slug}
+            to={"/" + slug}
+          >
+            {item.title}
+          </Link>
+        ))}
+      </aside>
+      <article className="policy-document">
+        <p className="eyebrow">ESGROW STUDIO</p>
+        <h1>{policy.title}</h1>
+        <p className="document-intro">Clear information, in one place.</p>
+        {policy.sections.map((section, i) => (
+          <section key={section.title}>
+            <span className="document-number">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <div>
+              <h2>{section.title}</h2>
+              <p>{section.text}</p>
+            </div>
+          </section>
+        ))}
+      </article>
+    </section>
+  );
+}

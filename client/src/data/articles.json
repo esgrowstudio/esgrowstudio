@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "before-you-redesign",
+    "title": "Before you redesign, ask better questions.",
+    "category": "Web & strategy",
+    "image": "services",
+    "sections": [
+      {
+        "title": "Start with the job your website needs to do.",
+        "text": "A redesign is more useful when it begins with a business problem. Are visitors struggling to understand your offer, find a service or take the next step? List the friction before choosing the visual direction."
+      },
+      {
+        "title": "Make an inventory before you make a moodboard.",
+        "text": "Review your pages, content, forms and integrations. Decide what must stay, what can be simplified and who owns each piece of content. This makes the scope clearer for everyone."
+      },
+      {
+        "title": "Choose a few signals to review.",
+        "text": "Agree what you will observe after launch: completed inquiries, useful engagement or a clearer path to key information. A new look is one part of the experience; clear content and dependable implementation matter too."
+      }
+    ]
+  },
+  {
+    "slug": "connected-marketing",
+    "title": "Why your website and ads need the same conversation.",
+    "category": "Marketing",
+    "image": "bloom",
+    "sections": [
+      {
+        "title": "Follow the promise through.",
+        "text": "An ad sets an expectation. The landing page should continue that thought with the same offer, language and visual cues. A disconnected experience asks the visitor to start over."
+      },
+      {
+        "title": "Give every page a useful next step.",
+        "text": "Match the action to the intent. Someone exploring an unfamiliar service may need details and answers before they are ready to inquire. Keep the next step clear without hiding the information they need."
+      },
+      {
+        "title": "Review the whole journey.",
+        "text": "A campaign review should consider the creative, audience, landing experience and inquiry process together. Treat results as signals to investigate rather than reasons to change everything at once."
+      }
+    ]
+  },
+  {
+    "slug": "website-care",
+    "title": "A practical rhythm for looking after your website.",
+    "category": "Studio notes",
+    "image": "studio",
+    "sections": [
+      {
+        "title": "Keep a small, consistent routine.",
+        "text": "Check your key pages, navigation and forms regularly. Review outdated information, broken links and any changes to third-party tools that your site depends on."
+      },
+      {
+        "title": "Plan updates and recovery together.",
+        "text": "Before changing a platform or integration, understand how you would recover if something went wrong. Keep a suitable backup process and document who can access it."
+      },
+      {
+        "title": "Make ownership clear.",
+        "text": "Assign responsibility for domains, hosting, content and support requests. A short record of providers, renewal dates and approved contacts can remove a surprising amount of uncertainty."
+      }
+    ]
+  }
+]

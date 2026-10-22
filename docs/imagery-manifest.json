@@ -1,0 +1,135 @@
+{
+  "tool": "Built-in image_gen",
+  "assets": [
+    {
+      "slug": "web-design",
+      "prompt": "Use case: product-mockup. Create one premium photorealistic editorial still life for a modern digital agency's LIGHT website. Landscape 3:2 composition. Bright white and warm ivory studio, soft daylight, subtle pale sage and vivid lime green accents, brushed silver technology, realistic glass, elegant shadows, a small real green plant as secondary detail. Sophisticated commercial product photography, tactile materials, beautiful balanced composition with generous breathing room. NOT a website screenshot or collage. No watermarks, no readable text, no random lettering, no people, no giant logos. Device screens should have beautifully designed credible light UI with abstract tiny unreadable labels. Keep important objects inside center 80 percent for responsive cropping. Subject: A designer's silver desktop display showing a polished light website interface with lime call to action, elegant typography blocks and a botanical image; beside it neatly arranged physical color swatches in sage, lime and ivory, a glass sphere and a fine pencil. Art direction and UI/UX design.",
+      "source": "${CODEX_HOME}/generated_images/01a164a8-309b-7d00-9335-858fdc7f8ca1/exec-9f8600e4-9804-4f43-bce7-fb66c3734405.png",
+      "outputs": [
+        "client/public/assets/imagery/web-design-320.webp",
+        "client/public/assets/imagery/web-design-640.webp",
+        "client/public/assets/imagery/web-design-1200.webp"
+      ]
+    },
+    {
+      "slug": "website-development",
+      "prompt": "Use case: product-mockup. Create one premium photorealistic editorial still life for a modern digital agency's LIGHT website. Landscape 3:2 composition. Bright white and warm ivory studio, soft daylight, subtle pale sage and vivid lime green accents, brushed silver technology, realistic glass, elegant shadows, a small real green plant as secondary detail. Sophisticated commercial product photography, tactile materials, beautiful balanced composition with generous breathing room. NOT a website screenshot or collage. No watermarks, no readable text, no random lettering, no people, no giant logos. Device screens should have beautifully designed credible light UI with abstract tiny unreadable labels. Keep important objects inside center 80 percent for responsive cropping. Subject: An open premium silver laptop on a pale travertine desk showing a beautiful light ecommerce website with lime accents; a slim upright smartphone beside it shows the matching responsive mobile design. Small plant behind, bright airy architectural background. The image clearly communicates responsive website development.",
+      "source": "${CODEX_HOME}/generated_images/01a164a8-309b-7d00-9335-858fdc7f8ca1/exec-c506faf9-15d9-4f09-8fcf-a12cd680de16.png",
+      "outputs": [
+        "client/public/assets/imagery/website-development-320.webp",
+        "client/public/assets/imagery/website-development-640.webp",
+        "client/public/assets/imagery/website-development-1200.webp"
+      ]
+    },
+    {
+      "slug": "seo",
+      "prompt": "Use case: product-mockup. Create one premium photorealistic editorial still life for a modern digital agency's LIGHT website. Landscape 3:2 composition. Bright white and warm ivory studio, soft daylight, subtle pale sage and vivid lime green accents, brushed silver technology, realistic glass, elegant shadows, a small real green plant as secondary detail. Sophisticated commercial product photography, tactile materials, beautiful balanced composition with generous breathing room. NOT a website screenshot or collage. No watermarks, no readable text, no random lettering, no people, no giant logos. Device screens should have beautifully designed credible light UI with abstract tiny unreadable labels. Keep important objects inside center 80 percent for responsive cropping. Subject: An elegant desktop monitor in a sunlit ivory workspace displaying a clean search analytics dashboard: lime organic growth line chart rising gently, search field, subtle technical audit modules; magnifying glass on desk, small plant. Credible SEO discovery and measurement visual, no floating sci-fi graphics.",
+      "source": "${CODEX_HOME}/generated_images/01a164a8-309b-7d00-9335-858fdc7f8ca1/exec-80c0a455-c878-4566-bab0-fac9c9466114.png",
+      "outputs": [
+        "client/public/assets/imagery/seo-320.webp",
+        "client/public/assets/imagery/seo-640.webp",
+        "client/public/assets/imagery/seo-1200.webp"
+      ]
+    },
+    {
+      "slug": "digital-strategy",
+      "prompt": "Use case: product-mockup. Create one premium photorealistic editorial still life for a modern digital agency's LIGHT website. Landscape 3:2 composition. Bright white and warm ivory studio, soft daylight, subtle pale sage and vivid lime green accents, brushed silver technology, realistic glass, elegant shadows, a small real green plant as secondary detail. Sophisticated commercial product photography, tactile materials, beautiful balanced composition with generous breathing room. NOT a website screenshot or collage. No watermarks, no readable text, no random lettering, no people, no giant logos. Device screens should have beautifully designed credible light UI with abstract tiny unreadable labels. Keep important objects inside center 80 percent for responsive cropping. Subject: Top-down and slightly angled editorial view of a beautiful strategy desk: ivory sheets with neat customer journey diagrams, lime and sage sticky notes arranged in a structured roadmap, a tablet displaying minimalist planning boards, fine metal pen, small green leaf. Intentional business strategy and planning, extremely tidy.",
+      "source": "${CODEX_HOME}/generated_images/01a164a8-309b-7d00-9335-858fdc7f8ca1/exec-a759f755-69b5-4d9d-8495-f94747ef31aa.png",
+      "outputs": [
+        "client/public/assets/imagery/digital-strategy-320.webp",
+        "client/public/assets/imagery/digital-strategy-640.webp",
+        "client/public/assets/imagery/digital-strategy-1200.webp"
+      ]
+    },
+    {
+      "slug": "social-media",
+      "prompt": "Use case: product-mockup. Create one premium photorealistic editorial still life for a modern digital agency's LIGHT website. Landscape 3:2 composition. Bright white and warm ivory studio, soft daylight, subtle pale sage and vivid lime green accents, brushed silver technology, realistic glass, elegant shadows, a small real green plant as secondary detail. Sophisticated commercial product photography, tactile materials, beautiful balanced composition with generous breathing room. NOT a website screenshot or collage. No watermarks, no readable text, no random lettering, no people, no giant logos. Device screens should have beautifully designed credible light UI with abstract tiny unreadable labels. Keep important objects inside center 80 percent for responsive cropping. Subject: A refined content creator's desk with an upright silver smartphone displaying a grid of coordinated sage and lime lifestyle posts, a small professional camera, neatly arranged botanical photo prints, and an elegant tablet showing a content calendar. Modern social media management, bright natural light.",
+      "source": "${CODEX_HOME}/generated_images/01a164a8-309b-7d00-9335-858fdc7f8ca1/exec-20d936ba-66d1-464d-852a-340b15afc7c4.png",
+      "outputs": [
+        "client/public/assets/imagery/social-media-320.webp",
+        "client/public/assets/imagery/social-media-640.webp",
+        "client/public/assets/imagery/social-media-1200.webp"
+      ]
+    },
+    {
+      "slug": "performance-marketing",
+      "prompt": "Use case: product-mockup. Create one premium photorealistic editorial still life for a modern digital agency's LIGHT website. Landscape 3:2 composition. Bright white and warm ivory studio, soft daylight, subtle pale sage and vivid lime green accents, brushed silver technology, realistic glass, elegant shadows, a small real green plant as secondary detail. Sophisticated commercial product photography, tactile materials, beautiful balanced composition with generous breathing room. NOT a website screenshot or collage. No watermarks, no readable text, no random lettering, no people, no giant logos. Device screens should have beautifully designed credible light UI with abstract tiny unreadable labels. Keep important objects inside center 80 percent for responsive cropping. Subject: A silver laptop displaying a clean advertising performance dashboard with lime bar charts and conversion funnel, beside two stylish printed ad creative cards and a smartphone showing a tasteful product advertisement. Professional paid media campaign still life, bright ivory desk, credible modern light interfaces.",
+      "source": "${CODEX_HOME}/generated_images/01a164a8-309b-7d00-9335-858fdc7f8ca1/exec-ce8775e6-93b3-4908-8707-d7d5434dc988.png",
+      "outputs": [
+        "client/public/assets/imagery/performance-marketing-320.webp",
+        "client/public/assets/imagery/performance-marketing-640.webp",
+        "client/public/assets/imagery/performance-marketing-1200.webp"
+      ]
+    },
+    {
+      "slug": "hosting-cloud",
+      "prompt": "Use case: product-mockup. Create one premium photorealistic editorial still life for a modern digital agency's LIGHT website. Landscape 3:2 composition. Bright white and warm ivory studio, soft daylight, subtle pale sage and vivid lime green accents, brushed silver technology, realistic glass, elegant shadows, a small real green plant as secondary detail. Sophisticated commercial product photography, tactile materials, beautiful balanced composition with generous breathing room. NOT a website screenshot or collage. No watermarks, no readable text, no random lettering, no people, no giant logos. Device screens should have beautifully designed credible light UI with abstract tiny unreadable labels. Keep important objects inside center 80 percent for responsive cropping. Subject: A beautiful architectural arrangement of three small brushed-silver server towers on a white stone plinth, a translucent sculptural glass cloud above and behind them, subtle lime status lights and a small plant. Premium realistic cloud infrastructure product photography, no cables sprawling, no neon sci-fi.",
+      "source": "${CODEX_HOME}/generated_images/01a164a8-309b-7d00-9335-858fdc7f8ca1/exec-1c531b33-0611-44bb-8011-6e5b64bb3983.png",
+      "outputs": [
+        "client/public/assets/imagery/hosting-cloud-320.webp",
+        "client/public/assets/imagery/hosting-cloud-640.webp",
+        "client/public/assets/imagery/hosting-cloud-1200.webp"
+      ]
+    },
+    {
+      "slug": "branding-content",
+      "prompt": "Use case: product-mockup. Create one premium photorealistic editorial still life for a modern digital agency's LIGHT website. Landscape 3:2 composition. Bright white and warm ivory studio, soft daylight, subtle pale sage and vivid lime green accents, brushed silver technology, realistic glass, elegant shadows, a small real green plant as secondary detail. Sophisticated commercial product photography, tactile materials, beautiful balanced composition with generous breathing room. NOT a website screenshot or collage. No watermarks, no readable text, no random lettering, no people, no giant logos. Device screens should have beautifully designed credible light UI with abstract tiny unreadable labels. Keep important objects inside center 80 percent for responsive cropping. Subject: A flat-lay brand identity presentation of embossed ivory business cards, a sage and lime packaging sleeve, a minimalist blank notebook, translucent green acrylic swatches and a brushed metal pen on textured white paper. Rich tactile paper textures, tasteful botanical shadow, no legible brand names or typography.",
+      "source": "${CODEX_HOME}/generated_images/01a164a8-309b-7d00-9335-858fdc7f8ca1/exec-7e343e01-60c9-4c4e-a2ce-d9b4e9358828.png",
+      "outputs": [
+        "client/public/assets/imagery/branding-content-320.webp",
+        "client/public/assets/imagery/branding-content-640.webp",
+        "client/public/assets/imagery/branding-content-1200.webp"
+      ]
+    },
+    {
+      "slug": "maintenance-support",
+      "prompt": "Use case: product-mockup. Create one premium photorealistic editorial still life for a modern digital agency's LIGHT website. Landscape 3:2 composition. Bright white and warm ivory studio, soft daylight, subtle pale sage and vivid lime green accents, brushed silver technology, realistic glass, elegant shadows, a small real green plant as secondary detail. Sophisticated commercial product photography, tactile materials, beautiful balanced composition with generous breathing room. NOT a website screenshot or collage. No watermarks, no readable text, no random lettering, no people, no giant logos. Device screens should have beautifully designed credible light UI with abstract tiny unreadable labels. Keep important objects inside center 80 percent for responsive cropping. Subject: An elegant silver laptop on an immaculate white desk showing a reassuring website health dashboard with a large green checkmark and neatly aligned checklist rows, a precision screwdriver and small brushed-metal gear arranged nearby, a small plant. Thoughtful professional website maintenance and support imagery, airy daylight.",
+      "source": "${CODEX_HOME}/generated_images/01a164a8-309b-7d00-9335-858fdc7f8ca1/exec-82d71302-7b80-4456-9e34-a4c241f67ad5.png",
+      "outputs": [
+        "client/public/assets/imagery/maintenance-support-320.webp",
+        "client/public/assets/imagery/maintenance-support-640.webp",
+        "client/public/assets/imagery/maintenance-support-1200.webp"
+      ]
+    },
+    {
+      "slug": "digital-workspace",
+      "prompt": "Use case: photorealistic-natural. One landscape 3:2 premium editorial photograph for a modern white-and-lime digital agency website. Bright airy natural daylight, ivory and warm white materials, pale sage and vivid natural green accents, elegant tactile textures, beautiful realistic shadows, refined commercial photography, generous composition, no readable text, no watermarks, no collage, no people. Keep primary subject inside the central 80 percent for responsive crops. Subject: An elegant coordinated digital portfolio: an open silver laptop, a large thin tablet and an upright smartphone on a pale travertine pedestal, all showing distinct beautifully designed light website and app interfaces with lime accents and botanical hero imagery. A glossy green plant frames one side, an airy sunlit studio behind. Like a premium agency portfolio campaign, believable hardware, no holograms.",
+      "source": "${CODEX_HOME}/generated_images/01a164a8-309b-7d00-9335-858fdc7f8ca1/exec-b1ffc777-4ab1-4894-a841-8fb277add9cf.png",
+      "outputs": [
+        "client/public/assets/imagery/digital-workspace-320.webp",
+        "client/public/assets/imagery/digital-workspace-640.webp",
+        "client/public/assets/imagery/digital-workspace-1200.webp"
+      ]
+    },
+    {
+      "slug": "creative-studio",
+      "prompt": "Use case: photorealistic-natural. One landscape 3:2 premium editorial photograph for a modern white-and-lime digital agency website. Bright airy natural daylight, ivory and warm white materials, pale sage and vivid natural green accents, elegant tactile textures, beautiful realistic shadows, refined commercial photography, generous composition, no readable text, no watermarks, no collage, no people. Keep primary subject inside the central 80 percent for responsive crops. Subject: A sophisticated independent creative studio interior. A long pale oak collaboration table with neatly placed design sketchbooks, material swatches and a silver desktop display, two empty sculptural cream chairs, floor-to-ceiling white curtains filtering morning sunlight, large lush green indoor plants, warm minimalist architecture. Calm, authentic editorial interior photography.",
+      "source": "${CODEX_HOME}/generated_images/01a164a8-309b-7d00-9335-858fdc7f8ca1/exec-1fbedc72-fe40-4a7a-ad96-df4f5c372171.png",
+      "outputs": [
+        "client/public/assets/imagery/creative-studio-320.webp",
+        "client/public/assets/imagery/creative-studio-640.webp",
+        "client/public/assets/imagery/creative-studio-1200.webp"
+      ]
+    },
+    {
+      "slug": "contact-desk",
+      "prompt": "Use case: photorealistic-natural. One landscape 3:2 premium editorial photograph for a modern white-and-lime digital agency website. Bright airy natural daylight, ivory and warm white materials, pale sage and vivid natural green accents, elegant tactile textures, beautiful realistic shadows, refined commercial photography, generous composition, no readable text, no watermarks, no collage, no people. Keep primary subject inside the central 80 percent for responsive crops. Subject: A warmly inviting consultation desk in a sunlit modern studio: half-open silver laptop, a blank ivory notebook and fine metal pen, ceramic coffee cup on a small tray, a glass vase with a graceful green branch. Beautiful soft window shadows and tactile pale stone tabletop, natural professional still-life, composition suggests a thoughtful first conversation.",
+      "source": "${CODEX_HOME}/generated_images/01a164a8-309b-7d00-9335-858fdc7f8ca1/exec-08362c27-b8ba-4934-a986-b31508f1ebd7.png",
+      "outputs": [
+        "client/public/assets/imagery/contact-desk-320.webp",
+        "client/public/assets/imagery/contact-desk-640.webp",
+        "client/public/assets/imagery/contact-desk-1200.webp"
+      ]
+    },
+    {
+      "slug": "botanical-growth",
+      "prompt": "Use case: photorealistic-natural. One landscape 3:2 premium editorial photograph for a modern white-and-lime digital agency website. Bright airy natural daylight, ivory and warm white materials, pale sage and vivid natural green accents, elegant tactile textures, beautiful realistic shadows, refined commercial photography, generous composition, no readable text, no watermarks, no collage, no people. Keep primary subject inside the central 80 percent for responsive crops. Subject: A small elegant fresh green sapling with four vivid leaves growing from a low sculptural ivory travertine planter, surrounded by two smooth pale stones on a warm white pedestal. Delicate morning sunlight, soft botanical shadows, a beautiful optimistic metaphor for sustainable business growth. High-end still-life product photography, quiet and refined, light seamless background.",
+      "source": "${CODEX_HOME}/generated_images/01a164a8-309b-7d00-9335-858fdc7f8ca1/exec-b389850b-90bc-48bd-9b0e-bdbfd2955a2b.png",
+      "outputs": [
+        "client/public/assets/imagery/botanical-growth-320.webp",
+        "client/public/assets/imagery/botanical-growth-640.webp",
+        "client/public/assets/imagery/botanical-growth-1200.webp"
+      ]
+    }
+  ]
+}

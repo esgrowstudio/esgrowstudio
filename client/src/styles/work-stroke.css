@@ -1,0 +1,89 @@
+.portfolio-page {
+  position: relative;
+  isolation: isolate;
+}
+.work-scroll-stroke {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  color: #c7df86;
+  overflow: hidden;
+}
+.portfolio-page > .portfolio-intro,
+.portfolio-page > .project-collection {
+  position: relative;
+  z-index: 1;
+}
+.portfolio-page .portfolio-headline {
+  justify-content: center;
+  text-align: center;
+  margin-top: 52px;
+}
+.portfolio-page .portfolio-intro-copy {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 23px;
+}
+.portfolio-page .real-project-copy > div {
+  background: var(--cream);
+  border-radius: 12px;
+}
+.portfolio-page .portfolio-filterbar {
+  position: relative;
+}
+.portfolio-page .portfolio-filterbar > .filter-pills,
+.portfolio-page .portfolio-count {
+  background: var(--cream);
+}
+.portfolio-page .portfolio-closing {
+  grid-template-columns: 1fr;
+  gap: 22px;
+  text-align: center;
+  justify-items: center;
+  padding-bottom: 15px;
+}
+.portfolio-page .portfolio-closing > .eyebrow {
+  background: var(--cream);
+}
+.portfolio-page .portfolio-closing > p {
+  max-width: 720px;
+  background: var(--cream);
+}
+.portfolio-page .portfolio-closing > .text-link {
+  grid-column: 1;
+  background: var(--cream);
+}
+.work-stroke-flower-space {
+  width: 100%;
+  height: 300px;
+}
+.portfolio-page .stroke-attribution {
+  position: relative;
+  font-size: 9px;
+  color: #7e8b70;
+  background: var(--cream);
+}
+@media (max-width: 680px) {
+  .work-scroll-stroke path {
+    stroke-width: 7px;
+  }
+  .portfolio-page .portfolio-headline {
+    margin-top: 35px;
+  }
+  .portfolio-page .portfolio-intro-copy {
+    display: flex;
+    gap: 20px;
+  }
+  .portfolio-page .portfolio-down {
+    margin-top: 0;
+    gap: 25px;
+  }
+  .work-stroke-flower-space {
+    height: 245px;
+  }
+  .portfolio-page .portfolio-closing {
+    padding-bottom: 15px;
+  }
+}

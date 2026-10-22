@@ -1,0 +1,415 @@
+@font-face {
+  font-family: "Esgrow Display";
+  src: url("/fonts/anton.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Esgrow Tall";
+  src: url("/fonts/six-caps.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* The supplied artwork stays intact, including its two fine horizontal rules. */
+main > section.atmosphere-hero {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: 100svh;
+  min-height: 660px;
+  overflow: hidden;
+  color: #f5ffed;
+  background: #0b4b27;
+}
+.atmosphere-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+}
+/* Keep the artwork's horizontal rules in place on wide desktop viewports. */
+@media (min-aspect-ratio: 17/10) {
+  .atmosphere-background {
+    object-fit: fill;
+  }
+}
+.atmosphere-composition {
+  position: absolute;
+  inset: 18% 4.6% 11.5%;
+}
+.roots-statement {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.075em;
+  margin: 0;
+  color: #f5ffed;
+  font-family: "Esgrow Display", "Arial Narrow", sans-serif;
+  font-size: clamp(64px, 7.8vw, 125px);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  text-transform: uppercase;
+  text-shadow: 0 2px 16px #0019070c;
+}
+.roots-statement > span {
+  display: block;
+  animation: roots-arrive 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.roots-statement > span:nth-child(2) {
+  animation-delay: 0.09s;
+}
+.roots-statement > span:nth-child(3) {
+  animation-delay: 0.18s;
+}
+.atmosphere-wordmark {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #f5ffed;
+  font-family: "Esgrow Tall", "Arial Narrow", sans-serif;
+  font-size: clamp(125px, 14.9vw, 238px);
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  line-height: 0.85;
+  animation: roots-arrive 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.22s both;
+}
+.atmosphere-wordmark > span {
+  display: block;
+}
+.atmosphere-scroll {
+  position: absolute;
+  left: 50%;
+  bottom: 2.1%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 140px;
+  padding: 5px 15px;
+  color: #ecffe3;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.19em;
+  white-space: nowrap;
+}
+.atmosphere-scroll-arrow {
+  font-size: 17px;
+  line-height: 1;
+  opacity: 0.8;
+  animation: scroll-breathe 2.4s ease-in-out infinite;
+}
+.atmosphere-scroll:hover {
+  color: #fff;
+}
+@keyframes roots-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+@keyframes scroll-breathe {
+  0%,
+  100% {
+    transform: translateY(-2px);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translateY(3px);
+    opacity: 1;
+  }
+}
+
+/* Clear liquid glass: refracted background, fine light-catching edges, no white fill. */
+header.liquid-header,
+header.liquid-header.is-scrolled {
+  position: fixed;
+  inset: 18px auto auto 50%;
+  width: calc(100% - 48px);
+  max-width: none;
+  height: 68px;
+  transform: translateX(-50%);
+  padding: 0 25px;
+  border: 1px solid #9cae9940;
+  border-radius: 25px;
+  background: linear-gradient(112deg, #b8eb9b0a, #062a1208 55%, #bfff9f0a);
+  backdrop-filter: blur(16px) saturate(115%);
+  -webkit-backdrop-filter: blur(16px) saturate(115%);
+  box-shadow:
+    0 8px 30px #0019090e,
+    inset 0 1px 1px #ffffff91,
+    inset 1px 0 1px #ffffff45,
+    inset 0 -1px 1px #18311b20;
+  isolation: isolate;
+  transition:
+    height 0.35s,
+    top 0.35s,
+    border-color 0.35s,
+    box-shadow 0.35s;
+}
+header.liquid-header:before {
+  display: block;
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(
+    120deg,
+    #ffffff10,
+    transparent 18%,
+    transparent 76%,
+    #d7ffbb0d
+  );
+  box-shadow: inset -1px 0 1px #ffffff4d;
+}
+header.liquid-header:after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12%;
+  right: 12%;
+  height: 1px;
+  z-index: -1;
+  background: linear-gradient(90deg, transparent, #ffffffbd, transparent);
+  pointer-events: none;
+}
+header.liquid-header.is-scrolled {
+  top: 12px;
+  height: 62px;
+  box-shadow:
+    0 10px 28px #10271314,
+    inset 0 1px 1px #ffffffb3,
+    inset 1px 0 1px #ffffff61,
+    inset 0 -1px 1px #18311b20;
+}
+header.liquid-header .brand {
+  color: #263e26;
+}
+header.liquid-header .brand-type > span > span {
+  color: #628d30;
+}
+header.liquid-header nav a {
+  color: #33472f;
+}
+header.liquid-header nav a:hover,
+header.liquid-header nav a.active {
+  background: #547c2312;
+  box-shadow:
+    inset 0 1px 1px #ffffff59,
+    inset 0 -1px 1px #2346110d;
+  color: #20391a;
+}
+header.liquid-header > .button.small {
+  background: linear-gradient(120deg, #89b94d1f, #498e1e14);
+  border: 1px solid #7b9f5259;
+  color: #294722;
+  box-shadow:
+    inset 0 1px 1px #ffffff80,
+    inset 0 -1px 1px #23461110,
+    0 2px 6px #28451208;
+  backdrop-filter: blur(9px) saturate(160%);
+  -webkit-backdrop-filter: blur(9px) saturate(160%);
+}
+header.liquid-header.on-hero {
+  border-color: #edffe142;
+  box-shadow:
+    0 8px 30px #00190918,
+    inset 0 1px 1px #ffffff80,
+    inset 1px 0 1px #ffffff38,
+    inset 0 -1px 1px #05190929;
+}
+header.liquid-header.on-hero .brand {
+  color: #f5ffed;
+}
+header.liquid-header.on-hero nav a {
+  color: #173b22;
+}
+header.liquid-header.on-hero .brand-type > span > span {
+  color: #d6f5b2;
+}
+header.liquid-header.on-hero nav a:hover,
+header.liquid-header.on-hero nav a.active {
+  color: #102d19;
+  background: #d5ffc217;
+  box-shadow:
+    inset 0 1px 1px #ffffff52,
+    inset 0 -1px 1px #092a1b14;
+}
+header.liquid-header.on-hero > .button.small {
+  color: #14361f;
+  background: linear-gradient(120deg, #c9ff8f24, #6cba2e14);
+  border-color: #dcffc05c;
+}
+.inner-page main {
+  padding-top: 100px !important;
+}
+body:not(.inner-page) .skip-link:focus {
+  background: #d9f5be;
+}
+
+@media (max-width: 1000px) {
+  header.liquid-header,
+  header.liquid-header.is-scrolled {
+    width: calc(100% - 32px);
+    padding-inline: 21px;
+  }
+  .roots-statement {
+    font-size: clamp(67px, 9vw, 95px);
+  }
+  .atmosphere-wordmark {
+    font-size: clamp(145px, 19vw, 190px);
+  }
+}
+@media (max-width: 680px) {
+  .atmosphere-hero {
+    height: 100svh;
+    min-height: 660px;
+  }
+  .atmosphere-background {
+    object-position: 49% center;
+  }
+  .atmosphere-composition {
+    inset: 19% 6% 12%;
+  }
+  .roots-statement {
+    font-size: clamp(48px, 12.1vw, 77px);
+    line-height: 1.06;
+    gap: 0.09em;
+    letter-spacing: -0.025em;
+  }
+  .atmosphere-wordmark {
+    font-size: clamp(137px, 36vw, 200px);
+    bottom: 0;
+  }
+  .atmosphere-scroll {
+    bottom: 2.1%;
+    font-size: 8px;
+    gap: 8px;
+  }
+  header.liquid-header,
+  header.liquid-header.is-scrolled {
+    top: 11px;
+    width: calc(100% - 20px);
+    height: 61px;
+    padding: 0 15px;
+    border-radius: 22px;
+  }
+  header.liquid-header.is-scrolled {
+    top: 8px;
+    height: 58px;
+  }
+  header.liquid-header > .button.small {
+    min-height: 36px;
+    margin-right: 10px;
+    padding: 9px 12px;
+    font-size: 9px;
+  }
+  header.liquid-header .menu-toggle {
+    width: 35px;
+    min-width: 35px;
+    height: 35px;
+    border-color: #62844442;
+    background: #578d2412;
+    color: #2e4728;
+    box-shadow: inset 0 1px 1px #ffffff80;
+  }
+  header.liquid-header.on-hero .menu-toggle {
+    background: #bde9a315;
+    border-color: #efffe142;
+    color: #14361f;
+  }
+  header.liquid-header.on-hero .brand {
+    color: #173e26;
+  }
+  header.liquid-header.on-hero .brand-type > span > span {
+    color: #2b5b29;
+  }
+  header.liquid-header nav {
+    top: 70px;
+    left: 0;
+    right: 0;
+    border-radius: 20px;
+    background: #c4e7a821;
+    border: 1px solid #91a78559;
+    box-shadow:
+      0 15px 35px #1736111c,
+      inset 0 1px #ffffff91;
+    backdrop-filter: blur(32px) saturate(190%);
+    -webkit-backdrop-filter: blur(32px) saturate(190%);
+  }
+  header.liquid-header.menu-open {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  header.liquid-header.menu-open:before {
+    backdrop-filter: blur(16px) saturate(115%);
+    -webkit-backdrop-filter: blur(16px) saturate(115%);
+  }
+  header.liquid-header.on-hero nav {
+    background: #062d159e;
+    border-color: #e5ffd64d;
+  }
+  header.liquid-header.on-hero nav a {
+    color: #f5ffed;
+  }
+  header.liquid-header.on-hero nav a:hover,
+  header.liquid-header.on-hero nav a.active {
+    color: #fff;
+  }
+  header.liquid-header nav a {
+    font-size: 13px;
+    padding: 14px 16px;
+  }
+  .inner-page main {
+    padding-top: 88px !important;
+  }
+}
+@media (max-width: 370px) {
+  header.liquid-header,
+  header.liquid-header.is-scrolled {
+    padding-inline: 11px;
+  }
+  header.liquid-header > .button.small {
+    padding-inline: 10px;
+    gap: 9px;
+    margin-right: 8px;
+  }
+  .roots-statement {
+    font-size: 12.1vw;
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  header.liquid-header,
+  header.liquid-header.is-scrolled {
+    background: #dbe9d1e8;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  header.liquid-header.on-hero {
+    background: #0c442de8;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .roots-statement > span,
+  .atmosphere-wordmark,
+  .atmosphere-scroll-arrow {
+    animation: none;
+  }
+}
