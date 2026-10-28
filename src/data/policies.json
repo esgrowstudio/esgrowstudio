@@ -48,6 +48,14 @@
         "text": "Portfolio case studies describe work delivered by Esgrow Studio. Project scope and qualitative outcomes are based on the studio’s project accounts. Website captures and product imagery show the public project experience and do not independently verify commercial results. Linked websites may change after a capture. Third-party names and marks belong to their respective owners."
       },
       {
+        "title": "Animation credits",
+        "text": "The Our Work page’s scroll-drawn animation is adapted from Skiper UI Skiper19 by @gurvinder-singh02, inspired by comgio.ai. The route and flower geometry are custom.",
+        "link": {
+          "url": "https://skiper-ui.com/v1/skiper19",
+          "label": "Skiper UI ↗"
+        }
+      },
+      {
         "title": "Using the site",
         "text": "Do not misuse the website, attempt unauthorised access or use its content in a way that infringes another party’s rights. Access to third-party services remains subject to their own terms."
       },

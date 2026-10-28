@@ -29,6 +29,15 @@ export default function LegalPage({ type }) {
             <div>
               <h2>{section.title}</h2>
               <p>{section.text}</p>
+              {section.link && (
+                <a
+                  href={section.link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {section.link.label}
+                </a>
+              )}
             </div>
           </section>
         ))}

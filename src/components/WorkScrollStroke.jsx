@@ -9,7 +9,7 @@ import {
 /**
  * Adapted from Skiper UI Skiper19 (https://skiper-ui.com/v1/skiper19),
  * by @gurvinder-singh02, inspired by comgio.ai. Free-version attribution
- * is also shown on the Work page. The route and flower geometry are custom.
+ * is also shown on the Terms page. The route and flower geometry are custom.
  */
 export default function WorkScrollStroke({ containerRef, layoutKey }) {
   const [geometry, setGeometry] = useState(null);

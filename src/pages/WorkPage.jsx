@@ -148,14 +148,6 @@ export default function WorkPage() {
               Let’s talk about yours ↗
             </Link>
             <div className="work-stroke-flower-space" aria-hidden="true" />
-            <a
-              className="stroke-attribution"
-              href="https://skiper-ui.com/v1/skiper19"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Scroll animation adapted from Skiper UI ↗
-            </a>
           </div>
         </section>
       </div>
