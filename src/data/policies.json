@@ -1,0 +1,110 @@
+{
+  "privacy": {
+    "title": "Privacy policy",
+    "sections": [
+      {
+        "title": "About this notice",
+        "text": "This notice describes the current website. It is a draft pending confirmation of Esgrow Studio’s legal business identity, address and privacy contact before accepting online inquiries."
+      },
+      {
+        "title": "What the forms do",
+        "text": "If you submit an inquiry and the server confirms receipt, your name, email, optional business details, chosen service, message and consent are sent directly from your browser through Google Apps Script to the studio’s Google Sheets enquiry register so the studio can review and respond. Downloading a brief instead creates a local file without submitting it. Avoid entering sensitive personal information."
+      },
+      {
+        "title": "Hosting and external resources",
+        "text": "The hosting provider may process technical request information to serve and protect the site. The website loads fonts from Google Fonts, which involves a request to Google. Provider terms and privacy notices also apply to those services."
+      },
+      {
+        "title": "Cookies and tracking",
+        "text": "No analytics or advertising trackers have been added to this website. See the cookie policy for the current browser-storage behaviour."
+      },
+      {
+        "title": "Your information",
+        "text": "You can clear unsent entries by refreshing or closing the page, and delete downloaded briefs from your device. For submitted inquiries, the studio must provide a verified contact for access, correction and deletion requests before accepting commercial inquiries. A retention period has not yet been finalised and must be set before launch."
+      },
+      {
+        "title": "Changes",
+        "text": "This notice should be reviewed whenever forms, analytics, integrations or hosting arrangements change."
+      }
+    ]
+  },
+  "terms": {
+    "title": "Terms & conditions",
+    "sections": [
+      {
+        "title": "Draft website terms",
+        "text": "These are general draft website terms. Esgrow Studio’s registered business details, governing law and contact information must be confirmed before these terms are relied on for commercial engagements."
+      },
+      {
+        "title": "Information on this website",
+        "text": "The site introduces services and creative concepts. Descriptions are general and do not create a binding offer, service-level commitment or guarantee of business outcomes."
+      },
+      {
+        "title": "Projects and proposals",
+        "text": "A separate written agreement must set out deliverables, fees, taxes, payment milestones, timelines, revisions, third-party costs, intellectual property, cancellation and support arrangements before work begins."
+      },
+      {
+        "title": "Portfolio projects",
+        "text": "Portfolio case studies describe work delivered by Esgrow Studio. Project scope and qualitative outcomes are based on the studio’s project accounts. Website captures and product imagery show the public project experience and do not independently verify commercial results. Linked websites may change after a capture. Third-party names and marks belong to their respective owners."
+      },
+      {
+        "title": "Using the site",
+        "text": "Do not misuse the website, attempt unauthorised access or use its content in a way that infringes another party’s rights. Access to third-party services remains subject to their own terms."
+      },
+      {
+        "title": "Project brief downloads",
+        "text": "Submitting an inquiry or downloading a brief does not form a service contract. No payment is accepted on this website. Inquiry delivery depends on the availability of Google Apps Script and the enquiry spreadsheet."
+      },
+      {
+        "title": "Questions and updates",
+        "text": "The legal business identity, verified privacy contact and a retention and deletion schedule must be confirmed before commercial launch. Project-specific questions should be resolved in the written proposal and agreement."
+      }
+    ]
+  },
+  "cookies": {
+    "title": "Cookie policy",
+    "sections": [
+      {
+        "title": "Current website behaviour",
+        "text": "This website does not set analytics, advertising or preference cookies through its application code. It does not use local storage to save your project form."
+      },
+      {
+        "title": "Essential service behaviour",
+        "text": "The hosting and sign-in infrastructure may use essential technical mechanisms outside the application code. Check the hosting provider’s notices for its own data handling."
+      },
+      {
+        "title": "External fonts",
+        "text": "Google Fonts is requested to display the website’s typeface. That request exposes technical connection information to the provider."
+      },
+      {
+        "title": "Your choices",
+        "text": "You can manage cookies and site data using your browser settings. No optional application cookies are currently offered. This policy must be reviewed before adding analytics or advertising integrations."
+      }
+    ]
+  },
+  "accessibility": {
+    "title": "Accessibility",
+    "sections": [
+      {
+        "title": "Our approach",
+        "text": "We aim for clear navigation, readable content and usable experiences across screen sizes. Accessibility is part of ongoing design and development rather than a one-time task."
+      },
+      {
+        "title": "Features on this website",
+        "text": "Navigation and forms use semantic HTML, interactive controls have visible focus styles, and animations respect the reduced-motion setting. Touch and keyboard scrolling retain native behaviour."
+      },
+      {
+        "title": "Motion preferences",
+        "text": "Enable reduced motion in your device or browser preferences to disable entrance effects and wheel momentum. You can navigate using a keyboard without using a mouse."
+      },
+      {
+        "title": "Known limitations",
+        "text": "The site has not undergone an independent accessibility audit. Some decorative text and generated imagery may need further review. This statement is not a claim of certified compliance."
+      },
+      {
+        "title": "Feedback",
+        "text": "For accessibility feedback, contact Esgrow Studio using the email, phone or WhatsApp Business details below."
+      }
+    ]
+  }
+}

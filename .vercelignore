@@ -1,0 +1,12 @@
+.git
+node_modules
+dist
+.artifacts
+.openai
+docs
+tests
+integrations
+.env*
+scripts/prepare-imagery.py
+client/
+server/

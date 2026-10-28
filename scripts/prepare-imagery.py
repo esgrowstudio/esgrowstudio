@@ -7,7 +7,7 @@ from PIL import Image, ImageOps
 root = Path(__file__).resolve().parents[1]
 codex_home = Path(os.environ.get("CODEX_HOME") or Path.home() / ".codex")
 manifest = json.loads((root / "docs/imagery-manifest.json").read_text(encoding="utf-8"))
-destination = root / "client/public/assets/imagery"
+destination = root / "public/assets/imagery"
 destination.mkdir(parents=True, exist_ok=True)
 for asset in manifest["assets"]:
     source = Path(asset["source"].replace("${CODEX_HOME}", str(codex_home)))

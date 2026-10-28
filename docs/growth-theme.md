@@ -1,5 +1,7 @@
 # Esgrow light growth theme
 
+Historical design notes. Current runtime and contact delivery setup: see README.md and google-sheets-integration.md.
+
 The supplied reference informs the split hero, lime accents, compact outlined service cards, project grids, story/values layout and contact form. The implementation uses white surfaces, charcoal text, pale green sections and restrained glass navigation and floating cards.
 
 ## Site structure
@@ -15,14 +17,14 @@ The reference's example statistics, people and contact details were not copied a
 
 ## Implementation
 
-`client/src/styles/growth-theme.css` is the shared theme layer, loaded after the existing component styles in `main.jsx`. Portfolio styles are loaded once globally so navigating to a case study cannot change the theme's cascade order.
+`src/styles/growth-theme.css` is the shared theme layer, loaded after the existing component styles in `main.jsx`. Portfolio styles are loaded once globally so navigating to a case study cannot change the theme's cascade order.
 
-`ServiceIcon.jsx` provides consistent SVG line icons. `GrowthVisual.jsx` supplies the botanical hero image. Scroll reveals use IntersectionObserver and observe newly filtered cards. Scrolling is native, with anchor offsets and a requestAnimationFrame progress indicator. Reduced-motion preferences are respected. Mobile navigation closes after a route change or Escape.
+`ServiceIcon.jsx` provides consistent SVG line icons. The original botanical hero was superseded by the supplied laptop photograph; its unused component has been removed. Scroll reveals use IntersectionObserver and observe newly filtered cards. Scrolling is native, with anchor offsets and a requestAnimationFrame progress indicator. Reduced-motion preferences are respected. Mobile navigation closes after a route change or Escape.
 
 ## Generated asset
 
 - Tool: built-in image generation, without the CLI fallback.
-- Project asset: `client/public/assets/growth-sculpture.png`.
+- Project asset: `docs/reference-assets/growth-sculpture.png`.
 - Original generation is preserved in the Codex generated-images directory.
 - The generated image was visually inspected before use. CSS edge masks blend it into the light page background.
 
@@ -42,4 +44,4 @@ Final prompt:
 - Local brief download tested using dummy QA details; the text file downloaded successfully and the form displayed its local-only confirmation. No inquiry was submitted.
 - Existing server syntax checks and four validation tests passed. Production build passed.
 
-MongoDB is not configured in this local environment. The API health endpoint reports the database as unavailable; live inquiry storage is therefore not verified. The form retains its honest error handling and local brief download.
+The website backend referenced by these original design checks has since been removed. Contact enquiries now go directly from the frontend to Google Apps Script; current checks are recorded in release-verification.md.

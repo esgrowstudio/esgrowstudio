@@ -1,6 +1,6 @@
 # Editorial image generation — October 2026
 
-Generated with the built-in imagegen tool. These are illustrative concepts, not photographs of the studio premises. Responsive WebP files are stored in client/public/assets/imagery at 320, 640 and 1200 pixels.
+Generated with the built-in imagegen tool. These are illustrative concepts, not photographs of the studio premises. Responsive WebP files are stored in public/assets/imagery at 320, 640 and 1200 pixels.
 
 ## connected-sculpture
 Prompt: Use case: stylized-concept. Create one premium editorial 3D still-life image for ESGROW STUDIO digital agency Services page. Wide landscape composition. A sculptural translucent sage green glass ribbon travels through three ivory architectural archways on warm limestone, a brushed silver sphere and restrained lime accent, symbolising connected strategy design and growth. Museum-quality product photography, realistic frosted glass refraction, soft directional sunlight, warm off-white backdrop, sophisticated negative space, tactile subtle grain. Beautiful high budget editorial art direction. No computers, no plants, no text, no logos, no graphs. The full sculpture fits inside the frame with breathing room. Save image for website use.

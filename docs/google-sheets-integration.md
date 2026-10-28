@@ -1,38 +1,49 @@
-# Google Sheets enquiry integration
+# Direct Google Sheets enquiries — no website backend
 
-Target spreadsheet: https://docs.google.com/spreadsheets/d/1tpG637BoiOutcXQsLd_iBrEF27lo0hr3Wkmeekjk88s/edit
+Spreadsheet: https://docs.google.com/spreadsheets/d/1tpG637BoiOutcXQsLd_iBrEF27lo0hr3Wkmeekjk88s/edit#gid=990203483
 
-Apps Script source: `integrations/google-sheets/Code.gs`.
+Receiver source: `integrations/google-sheets/Code.gs`.
 
-## Receiver setup
+## Flow
 
-1. Open the supplied spreadsheet, then Extensions → Apps Script.
-2. Use the receiver source. Keep the destination ID fixed to the studio spreadsheet. The receiver creates a dedicated `Website Enquiries` tab and preserves other existing tabs.
-3. Generate a random 32-byte-or-longer server secret. Store it only in the backend’s private `INQUIRY_SHEETS_SECRET` environment variable. Put its SHA-256 digest in `CONFIG.secretHash`; the digest can be stored in source control, the secret cannot.
-4. Deploy as a Web app, executing as the studio owner. Allow the server to call it without a Google browser login (`Anyone`). Approve the requested Sheets access using the owner account. The script still rejects writes without the correct secret.
-5. Save the final `/exec` URL as `INQUIRY_SHEETS_URL` on the Node server. Restart the server after changing environment configuration.
-6. Check `/api/ready`, then submit one clearly labelled test through the actual website. Verify the row in Sheets. Do not treat source tests alone as proof of external delivery.
+Browser contact form → hidden cross-origin form POST → Google Apps Script → existing Website Enquiries tab → Google-hosted postMessage acknowledgement → success state.
 
-## Columns
+No Express process, MongoDB, Vercel Function, shared browser secret or Google service-account JSON is required. The public receiver executes as the studio owner. Visitors do not sign in to Google or receive access to the Sheet.
 
-Inquiry ID; Received (IST); Name; Email; Business / Website; Service; Project Message; Privacy Consent; Source; Status; Payload Hash.
+## Receiver deployment
 
-The ID and hidden payload digest support safe retries. The receiver checks expected column headers and refuses to write if they have been changed. Add additional management columns after the existing columns; keep the first eleven in place. You can change the `Status` value manually to Reviewed or Closed. The script does not send email or subscribe visitors to marketing.
+The existing project and deployment URL are reused. In the Sheet’s Extensions → Apps Script editor, use the repository receiver source. Manage deployments → Edit → New version → Deploy. Execute as the studio owner and keep access as Anyone so the form can submit without Google authentication. Approve new permissions only after reviewing them.
 
-## Data and security behavior
+The script creates the dedicated `Website Enquiries` tab if needed and preserves existing rows and other tabs. Keep the first eleven columns in order: Inquiry ID; Received (IST); Name; Email; Business / Website; Service; Project Message; Privacy Consent; Source; Status; Payload Hash. The digest column is hidden and used for conflict/duplicate checks. Status can be changed manually.
 
-- Validation and per-IP rate limiting happen in Express before any Sheets request.
-- The browser never receives the script URL or server secret.
-- The Apps Script receiver rechecks the secret, text lengths, email, request ID and privacy consent.
-- A script lock serializes writes and duplicate checks; the same request ID/content is acknowledged without a second row.
-- A matching request ID with different content fails instead of silently overwriting a lead.
-- Leading spreadsheet formula characters in customer-provided text are escaped.
-- A success message requires both a successful receiver response and the expected request ID.
-- On timeout or failure, the form retains its contents. A brief download is local only.
-- Sheet access and legal retention requirements remain the studio owner’s responsibility. With the owner’s explicit approval, general access was changed to Restricted; the receiver continues to run as the owner.
+## Add the live domain
 
-## Deployment and updates
+In Apps Script → Project Settings → Script Properties, set:
 
-The website needs a Node backend; a static-only deployment does not run the contact API. Copy the two private environment values to the live host. When receiver code changes, update the existing Apps Script deployment to a new version; editing the source alone does not update an already published version. If the secret is rotated, update the server value and receiver digest together.
+- Property: `ALLOWED_ORIGINS`
+- Value: comma-separated exact origins, for example `https://your-project.vercel.app,https://your-custom-domain.com`.
 
-Official references: https://developers.google.com/apps-script/guides/web and https://developers.google.com/apps-script/reference/lock/lock-service.
+Use the actual domains after Vercel assigns them. Do not add wildcards, paths or trailing slashes. localhost and 127.0.0.1 on ports 5173 and 4173 are already allowed. A disallowed origin receives a failure receipt and no row. Updating the property does not require publishing another script version.
+
+## Validation and limits
+
+- Required text, field lengths, email, known service choice, UUID, privacy consent and honeypot are checked in the receiver.
+- A script lock serializes duplicate checks and appends.
+- The same request ID and content are acknowledged without adding another row; conflicting content with the same ID is rejected.
+- A best-effort cache bucket limits new rows to 30 per minute across the receiver. Cached limits are not a guaranteed defence against determined bots.
+- Formula-like user text is escaped before writing it to cells.
+- The frontend checks the Google message origin, exact request ID and a fresh nonce. No customer data is returned in the acknowledgement.
+- Failure or timeout preserves form contents; brief download stays local.
+
+This is a public enquiry endpoint, not an authenticated server API. A claimed origin can be forged by a non-browser client. No secret in JavaScript could prevent that. If public spam becomes a problem, add a proper challenge verified by Apps Script; do not put an API secret in the website.
+
+Sheet sharing stays Restricted; receiver web-app accessibility does not change Sheet sharing. No read API or marketing subscription is provided.
+
+## Deployment checklist
+
+1. Build the static website with `npm run build`.
+2. Deploy `dist` using the repository Vercel settings.
+3. Add the actual Vercel/custom-domain origins to `ALLOWED_ORIGINS`.
+4. Submit a labelled test from that live domain and verify its row and success state.
+
+Official references: https://developers.google.com/apps-script/guides/web and https://developers.google.com/apps-script/guides/html/restrictions.

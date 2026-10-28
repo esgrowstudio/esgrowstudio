@@ -1,45 +1,66 @@
-# Esgrow Studio
+# Esgrow Studio — frontend only
 
-React/Vite agency website with a Node/Express API. Contact enquiries are saved to the studio’s Google Sheet through an authenticated Google Apps Script receiver. A public browser login is not required for website visitors.
+React + Vite website with direct contact-form delivery to the studio’s Google Sheet. The website needs no Node/Express API, MongoDB database, Vercel Function, private key or server secret. Google Apps Script remains the external Sheet receiver.
 
-## Local development
+## Run locally
 
-Use Node.js 20.19+ or 22.12+. Run `npm ci`, copy `.env.example` to `.env`, configure the Google Sheets receiver below, then run `npm run dev`. Open http://localhost:5173. The API runs on port 3000; Vite proxies `/api` to it.
+Use Node.js 20.19+ or 22.12+ for development/build tools only.
 
-Without a configured receiver, the website runs but submissions return an honest HTTP 503. The form retains the visitor’s details and offers a local brief download. MongoDB is not required for the contact flow. Legacy MongoDB model/config files remain available but are not used by the active receiver.
+```sh
+npm ci
+npm run dev
+```
 
-## Google Sheets contact flow
+After dependencies are installed, run just `npm run dev` from the project root and open http://localhost:5173. `npm start` runs the same frontend. There is no separate client/server command. `npm run build` creates `dist/`; `npm run preview` serves that static build at http://localhost:4173.
 
-See [the integration guide](docs/google-sheets-integration.md). The server-only configuration is:
+The existing public receiver URL is already configured in `src/data/inquiry-config.js`. To use a different deployment, set `VITE_GOOGLE_SHEETS_URL` in `.env.local` or the hosting provider’s build settings. No secret belongs in a `VITE_` variable.
 
-- `INQUIRY_SHEETS_URL`: the deployed Apps Script `/exec` URL.
-- `INQUIRY_SHEETS_SECRET`: a random server secret whose SHA-256 digest matches `CONFIG.secretHash` in the Apps Script receiver.
+## Contact form
 
-Never put either setting in a `VITE_` variable, client source or Git. The `.env` file is ignored. Copy both settings into the production host’s private environment settings when deploying; local `.env` settings do not transfer automatically.
+The browser submits directly to Google Apps Script using an invisible form/iframe. The receiver validates the submission, appends it to the existing `Website Enquiries` tab and sends a `postMessage` receipt to the submitting site. The frontend accepts only a Google-hosted receipt with the correct request ID and one-time nonce. An iframe load or an opaque network response is never treated as success.
 
-Flow: visitor form → Express validation and rate limiting → authenticated Apps Script request → dedicated `Website Enquiries` tab → matching acknowledgement → success message. Stable request IDs and a script lock prevent duplicate rows when the same request is retried. Editing a form field creates a new request ID. User text is escaped before it can be interpreted as a spreadsheet formula.
+Validation, a spam honeypot, best-effort request limits, duplicate protection and formula escaping run in the Google receiver. The Sheet remains Restricted. The receiver is a public form endpoint: browser code cannot hold a private secret, and origin fields are not authentication or comprehensive bot protection.
 
-`GET /api/health` checks that the process is running. `GET /api/ready` verifies access to the actual Sheets destination and returns 503 when it cannot confirm readiness. Neither endpoint exposes enquiry data or credentials. Email notifications are not implemented; the team reviews the Google Sheet.
+See [the integration guide](docs/google-sheets-integration.md) for updating the receiver and adding allowed website addresses.
 
-## Production
+## Vercel deployment preparation
 
-Run `npm run build`, then `npm start`. Deploy the full stack to a Node-compatible host. Express serves the build, API and direct page routes. Set `NODE_ENV=production`, your host’s `PORT`, and the two Sheets environment settings. Use HTTPS. Set `TRUST_PROXY` only for the trusted reverse proxy used by your host.
+The repository includes `vercel.json`:
 
-For separate frontend/API hosting, set the exact frontend URL in `FRONTEND_ORIGIN` and set `VITE_API_URL` to the API origin before building. Configure your static frontend host to route known website paths to their emitted index files or the SPA entry. A frontend-only static host cannot run the enquiry API.
+- Root Directory: repository root (leave blank / `.`).
+- Framework: Vite.
+- Install: `npm ci`.
+- Build: `npm run build`.
+- Output: `dist`.
+- No backend/serverless functions or database environment variables.
+
+The build creates a static HTML entry for every known React route plus `404.html`. Clean URLs and direct refreshes therefore work without an API server. The public receiver URL already has a default; `VITE_GOOGLE_SHEETS_URL` is only an optional override.
+
+**Before testing a deployed Vercel URL:** add its exact origin (for example `https://your-project.vercel.app`) to the Google Apps Script project’s `ALLOWED_ORIGINS` Script Property. Add your final custom domain there as well. Do not enter a path or trailing slash. Local development and preview origins are already allowed. Updating a Script Property does not require redeploying receiver code.
+
+This change prepares the project for Vercel; it does not create or publish a Vercel deployment.
 
 ## Checks
 
-- `npm run check`: server syntax.
-- `npm test`: validation, request/receipt behavior, API routing and Sheets transport tests.
-- `npm run build`: frontend production build and known-route entry files.
-- `npm audit --omit=dev`: production dependency audit.
+```sh
+npm run check
+npm test
+npm run build
+```
 
-The 35 page routes, nine service details and real project stories live in `client/src/data/routes.js`. Images have responsive WebP variants; non-home routes load separately. Motion respects reduced-motion preferences. `dist/` is generated and ignored.
+The focused tests cover Google receipt validation, timeouts, cleanup, receiver validation, duplicate/conflicting requests, formula escaping and request limits. The Google receiver source is retained under `integrations/google-sheets/Code.gs`; this is not hosted by Vercel.
 
-## Launch-specific items
+Website layouts, assets, page content and animations remain in `src/` and `public/`. Legal pages still require final business details before commercial launch, and demonstration reviews remain labelled as examples.
 
-- Verify one labelled test enquiry appears in the Google Sheet from the deployed website.
-- Confirm the studio’s legal business identity, address, retention period and final legal wording. Current legal pages remain clearly labelled drafts.
-- Homepage review examples are visibly labelled demonstrations; replace them with approved genuine reviews before presenting them as customer endorsements.
-- Agree actual fees, deliverables and support commitments in each written proposal.
-- Keep the enquiry spreadsheet restricted to the people who need access; it contains customer contact data.
+## Folder guide
+
+- `src/`: active website pages, shared components, styles, data and browser-side form delivery.
+- `public/`: only deployed images, fonts, icons and the intro bootstrap file.
+- `integrations/google-sheets/`: source of the external Google Sheet receiver; needed when updating that integration.
+- `scripts/`: build/check tasks and the optional responsive-imagery export utility.
+- `tests/`: focused contact-delivery regression tests.
+- `docs/`: setup notes, image provenance and preserved originals under `reference-assets/`.
+- `node_modules/`: installed development/build dependencies; regenerate with `npm ci`.
+- `dist/`: generated static site, rebuilt with `npm run build` and used by the preview. Do not edit it directly.
+
+`.vercelignore` excludes documentation, original references, local artifacts and non-deployment tools from Vercel uploads. There is no website `server/` folder.

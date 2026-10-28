@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-const { routes } = await import("../client/src/data/routes.js");
+const { routes } = await import("../src/data/routes.js");
 const html = fs.readFileSync("dist/index.html", "utf8");
 for (const page of routes) {
   if (page.path === "/") continue;
@@ -15,6 +15,5 @@ for (const page of routes) {
   );
 }
 fs.writeFileSync("dist/404.html", html);
-fs.writeFileSync("dist/routes.json", JSON.stringify(routes.map((r) => r.path)));
-// Static hosts can serve each known route directly; Express serves the SPA with
-// correct status codes. No API is simulated in the static preview.
+// Every known route has its own static entry, so Vercel can serve deep links
+// directly. The root 404.html handles unknown URLs without a runtime server.

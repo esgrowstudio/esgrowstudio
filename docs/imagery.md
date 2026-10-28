@@ -2,7 +2,7 @@
 
 Created 13 original images using the built-in image generation tool: nine service-specific visuals and four editorial scenes. Final prompts, preserved source paths and exported asset paths are recorded in [imagery-manifest.json](imagery-manifest.json).
 
-All website-ready files are saved in `client/public/assets/imagery/`. The source PNGs remain in the Codex generated-images directory. Each asset has 320px, 640px and 1200px WebP versions; the 39 exported files total approximately 2.1 MB. Resizing and encoding preserve the generated compositions; no creative edits were made during conversion.
+All website-ready files are saved in `public/assets/imagery/`. The source PNGs remain in the Codex generated-images directory. Each asset has 320px, 640px and 1200px WebP versions; the 39 exported files total approximately 2.1 MB. Resizing and encoding preserve the generated compositions; no creative edits were made during conversion.
 
 ## Placement
 
