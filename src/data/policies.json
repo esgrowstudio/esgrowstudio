@@ -8,19 +8,19 @@
       },
       {
         "title": "What the forms do",
-        "text": "If you submit an inquiry and the server confirms receipt, your name, email, optional business details, chosen service, message and consent are sent directly from your browser through Google Apps Script to the studio’s Google Sheets enquiry register so the studio can review and respond. Downloading a brief instead creates a local file without submitting it. Avoid entering sensitive personal information."
+        "text": "If you submit an inquiry and the receiver confirms receipt, your name, email, optional business details, chosen service, message and consent are sent directly from your browser through Google Apps Script to the studio’s Google Sheets enquiry register so the studio can review and respond. Avoid entering sensitive personal information."
       },
       {
         "title": "Hosting and external resources",
         "text": "The hosting provider may process technical request information to serve and protect the site. The website loads fonts from Google Fonts, which involves a request to Google. Provider terms and privacy notices also apply to those services."
       },
       {
-        "title": "Cookies and tracking",
-        "text": "No analytics or advertising trackers have been added to this website. See the cookie policy for the current browser-storage behaviour."
+        "title": "Website analytics",
+        "text": "We use Vercel Web Analytics to understand aggregate visits and page views, including referral sources, approximate location, browser and device type. It does not use analytics cookies. We remove query strings and fragments from page URLs sent by the analytics integration and do not send contact-form field values as analytics events. Vercel’s privacy notice explains its processing. See the cookie policy for browser-storage behaviour."
       },
       {
         "title": "Your information",
-        "text": "You can clear unsent entries by refreshing or closing the page, and delete downloaded briefs from your device. For submitted inquiries, the studio must provide a verified contact for access, correction and deletion requests before accepting commercial inquiries. A retention period has not yet been finalised and must be set before launch."
+        "text": "You can clear unsent entries by refreshing or closing the page. For submitted inquiries, the studio must provide a verified contact for access, correction and deletion requests before accepting commercial inquiries. A retention period has not yet been finalised and must be set before launch."
       },
       {
         "title": "Changes",
@@ -52,8 +52,8 @@
         "text": "Do not misuse the website, attempt unauthorised access or use its content in a way that infringes another party’s rights. Access to third-party services remains subject to their own terms."
       },
       {
-        "title": "Project brief downloads",
-        "text": "Submitting an inquiry or downloading a brief does not form a service contract. No payment is accepted on this website. Inquiry delivery depends on the availability of Google Apps Script and the enquiry spreadsheet."
+        "title": "Project inquiries",
+        "text": "Submitting an inquiry does not form a service contract. No payment is accepted on this website. Inquiry delivery depends on the availability of Google Apps Script and the enquiry spreadsheet."
       },
       {
         "title": "Questions and updates",
@@ -66,7 +66,7 @@
     "sections": [
       {
         "title": "Current website behaviour",
-        "text": "This website does not set analytics, advertising or preference cookies through its application code. It does not use local storage to save your project form."
+        "text": "Vercel Web Analytics collects aggregate visitor and page-view statistics without analytics cookies. The application does not set advertising cookies or use local storage to save your project form. A session-storage flag remembers whether the introductory animation has already played in the current tab."
       },
       {
         "title": "Essential service behaviour",
@@ -78,7 +78,7 @@
       },
       {
         "title": "Your choices",
-        "text": "You can manage cookies and site data using your browser settings. No optional application cookies are currently offered. This policy must be reviewed before adding analytics or advertising integrations."
+        "text": "You can manage cookies and site data using your browser settings. No optional application cookies are currently offered. This policy should be reviewed whenever analytics or advertising integrations change."
       }
     ]
   },

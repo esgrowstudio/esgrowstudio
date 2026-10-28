@@ -18,7 +18,6 @@ export default function Layout() {
       <a className="skip-link" href="#main-content">
         Skip to content
       </a>
-      <div className="scroll-progress" aria-hidden="true" />
       <div className="site-shell">
         <Header />
         <main id="main-content" key={pathname}>

@@ -2,7 +2,6 @@ import { useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { sendInquiry } from "../lib/googleSheets.js";
 import services from "../data/services.json";
-import { contact } from "../data/contact.js";
 import { createInquiryId } from "../lib/inquiryId.js";
 const serviceNames = [
   ...services.map((s) => s.name),
@@ -48,35 +47,13 @@ export default function InquiryForm() {
     } catch (error) {
       setStatus(
         error instanceof TypeError
-          ? "Unable to send your enquiry. You can download your brief instead."
+          ? "Unable to send your enquiry. Please try again or contact the studio directly."
           : error.message,
       );
     } finally {
       submitting.current = false;
       setBusy(false);
     }
-  }
-  function download() {
-    const text = [
-      "ESGROW STUDIO — PROJECT BRIEF",
-      `STUDIO EMAIL: ${contact.email}`,
-      `STUDIO PHONE / WHATSAPP: ${contact.phone}`,
-      "",
-      ...Object.entries(values)
-        .filter(([k]) => k !== "website")
-        .map(([key, val]) => `${key.toUpperCase()}: ${val}`),
-      "",
-      "Downloaded locally. This file is not a submission.",
-    ].join("\n");
-    const url = URL.createObjectURL(new Blob([text], { type: "text/plain" }));
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "esgrow-project-brief.txt";
-    a.click();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
-    setStatus(
-      "Your brief has downloaded locally. This download does not submit your inquiry.",
-    );
   }
   return (
     <form onSubmit={submit} className="inquiry-form" aria-busy={busy}>
@@ -169,9 +146,6 @@ export default function InquiryForm() {
         <div className="actions">
           <button className="button yellow" disabled={busy} type="submit">
             {busy ? "Sending…" : "Send my inquiry ↗"}
-          </button>
-          <button className="button" type="button" onClick={download}>
-            Download brief ↓
           </button>
         </div>
       </fieldset>

@@ -98,7 +98,7 @@ export default function SelectedWorkCarousel() {
       if (!touching.current) {
         // Keep sub-pixel progress rather than losing small increments to scroll rounding.
         const width = group.current?.getBoundingClientRect().width || 1;
-        position = (position + elapsed * 0.027) % width;
+        position = (position + elapsed * 0.04) % width;
         element.scrollLeft = position;
       } else position = element.scrollLeft;
       frame = requestAnimationFrame(animate);

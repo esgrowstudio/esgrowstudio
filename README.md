@@ -38,7 +38,11 @@ The build creates a static HTML entry for every known React route plus `404.html
 
 **Before testing a deployed Vercel URL:** add its exact origin (for example `https://your-project.vercel.app`) to the Google Apps Script project’s `ALLOWED_ORIGINS` Script Property. Add your final custom domain there as well. Do not enter a path or trailing slash. Local development and preview origins are already allowed. Updating a Script Property does not require redeploying receiver code.
 
-This change prepares the project for Vercel; it does not create or publish a Vercel deployment.
+Production: https://esgrowstudio.vercel.app. Its exact origin is configured in the receiver’s `ALLOWED_ORIGINS` property. Add any future custom domain there before accepting enquiries from it.
+
+## Web Analytics
+
+Vercel Web Analytics is mounted once in `src/main.jsx` using `@vercel/analytics/react`. It tracks visits and client-side page navigation without analytics cookies. Query strings and URL fragments are stripped before sending page URLs; form values are not sent as analytics events. No analytics environment variables or backend are required. View results in the Vercel project’s Analytics dashboard after deployment.
 
 ## Checks
 

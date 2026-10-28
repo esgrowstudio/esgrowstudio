@@ -1,5 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
+import { Analytics } from "@vercel/analytics/react";
 import App from "./App.jsx";
 import "./styles/base.css";
 import "./styles/pages.css";
@@ -17,4 +18,16 @@ import "./styles/site-polish.css";
 import "./styles/about-premium.css";
 import "./styles/agency-pages.css";
 import "./styles/responsive-final.css";
-createRoot(document.getElementById("root")).render(<App />);
+createRoot(document.getElementById("root")).render(
+  <>
+    <App />
+    <Analytics
+      beforeSend={(event) => {
+        const url = new URL(event.url);
+        url.search = "";
+        url.hash = "";
+        return { ...event, url: url.toString() };
+      }}
+    />
+  </>,
+);

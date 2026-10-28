@@ -21,7 +21,7 @@ The script creates the dedicated `Website Enquiries` tab if needed and preserves
 In Apps Script → Project Settings → Script Properties, set:
 
 - Property: `ALLOWED_ORIGINS`
-- Value: comma-separated exact origins, for example `https://your-project.vercel.app,https://your-custom-domain.com`.
+- Current production value: `https://esgrowstudio.vercel.app`. Append future custom domains as comma-separated exact origins.
 
 Use the actual domains after Vercel assigns them. Do not add wildcards, paths or trailing slashes. localhost and 127.0.0.1 on ports 5173 and 4173 are already allowed. A disallowed origin receives a failure receipt and no row. Updating the property does not require publishing another script version.
 
@@ -33,7 +33,7 @@ Use the actual domains after Vercel assigns them. Do not add wildcards, paths or
 - A best-effort cache bucket limits new rows to 30 per minute across the receiver. Cached limits are not a guaranteed defence against determined bots.
 - Formula-like user text is escaped before writing it to cells.
 - The frontend checks the Google message origin, exact request ID and a fresh nonce. No customer data is returned in the acknowledgement.
-- Failure or timeout preserves form contents; brief download stays local.
+- Failure or timeout preserves form contents so the visitor can retry.
 
 This is a public enquiry endpoint, not an authenticated server API. A claimed origin can be forged by a non-browser client. No secret in JavaScript could prevent that. If public spam becomes a problem, add a proper challenge verified by Apps Script; do not put an API secret in the website.
 

@@ -32,7 +32,7 @@ const good = {
     website: "",
   },
 };
-function receiver() {
+function receiver(allowedOrigins = "") {
   const rows = [headers.slice()];
   const cached = new Map();
   let locked = false;
@@ -96,7 +96,9 @@ function receiver() {
       formatDate: () => "2026-10-29 12:00:00",
     },
     PropertiesService: {
-      getScriptProperties: () => ({ getProperty: () => "" }),
+      getScriptProperties: () => ({
+        getProperty: (key) => (key === "ALLOWED_ORIGINS" ? allowedOrigins : ""),
+      }),
     },
     CacheService: {
       getScriptCache: () => ({
@@ -138,18 +140,28 @@ function receiver() {
         parameter: { payload: JSON.stringify(data) },
       });
       const match = output.html.match(
-        /window\.top\.postMessage\((.*),"http:\/\/localhost:5173"\);/,
+        /window\.top\.postMessage\((.*),"https?:\/\/[^\"]+"\);/,
       );
       assert.ok(
         match,
         "Expected explicit acknowledgement to the submitting site",
       );
       assert.ok(output.html.includes("</script>"));
+      assert.ok(output.html.includes(`,${JSON.stringify(data.origin)});`));
       return JSON.parse(match[1]);
     },
     context,
   };
 }
+test("Google receiver accepts the configured production domain and rejects similar domains", () => {
+  const origin = "https://esgrowstudio.vercel.app";
+  const r = receiver(origin);
+  assert.equal(r.send({ ...good, origin }).ok, true);
+  assert.equal(r.rows.length, 2);
+  assert.equal(r.rows[1][2], good.inquiry.name);
+  assert.equal(r.send({ ...good, origin: `${origin}.example.com` }).ok, false);
+  assert.equal(r.rows.length, 2);
+});
 test("Google receiver persists once and acknowledges identical retries", () => {
   const r = receiver();
   assert.equal(r.send(good).ok, true);

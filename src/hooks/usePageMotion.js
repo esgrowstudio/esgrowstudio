@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-// Native scrolling, route-aware reveals and progress. Observe filtered-in cards too.
+// Route-aware reveals. Observe filtered-in cards too.
 export default function usePageMotion(pathname) {
   useEffect(() => {
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -42,26 +42,10 @@ export default function usePageMotion(pathname) {
           .forEach((el) => el.classList.add("visible"));
     };
     preference.addEventListener("change", showAll);
-    let frame = 0;
-    const paint = () => {
-      frame = 0;
-      const progress = document.querySelector(".scroll-progress");
-      if (progress)
-        progress.style.transform = `scaleX(${window.scrollY / Math.max(1, document.documentElement.scrollHeight - innerHeight)})`;
-    };
-    const onScroll = () => {
-      if (!frame) frame = requestAnimationFrame(paint);
-    };
-    paint();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll, { passive: true });
     return () => {
       observer.disconnect();
       mutations.disconnect();
-      cancelAnimationFrame(frame);
       preference.removeEventListener("change", showAll);
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
     };
   }, [pathname]);
 }
