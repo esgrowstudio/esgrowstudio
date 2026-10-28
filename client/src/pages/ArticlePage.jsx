@@ -1,3 +1,4 @@
+import CallToAction from "../components/CallToAction.jsx";
 import { Link, useParams } from "react-router-dom";
 import articles from "../data/articles.json";
 import NotFoundPage from "./NotFoundPage.jsx";
@@ -69,6 +70,7 @@ export default function ArticlePage() {
           </div>
         </div>
       </div>
+      <CallToAction />
     </>
   );
 }

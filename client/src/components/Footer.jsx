@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Brand } from "./Header.jsx";
+import ContactDetails from "./ContactDetails.jsx";
 
 const groups = [
   {
@@ -35,7 +36,7 @@ export default function Footer() {
   return (
     <footer>
       <div className="footer-top">
-        <div>
+        <div className="footer-brand-column">
           <Brand />
           <h3>
             Rooted in vision.
@@ -57,6 +58,10 @@ export default function Footer() {
               ))}
             </div>
           ))}
+        </div>
+        <div className="footer-contact-column">
+          <span className="footer-column-title">LET’S CONNECT</span>
+          <ContactDetails compact />
         </div>
       </div>
       <div className="footer-bottom">

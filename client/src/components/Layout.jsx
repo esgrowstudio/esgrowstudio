@@ -1,4 +1,4 @@
-import { useLayoutEffect } from "react";
+import { Suspense, useLayoutEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
@@ -22,7 +22,15 @@ export default function Layout() {
       <div className="site-shell">
         <Header />
         <main id="main-content" key={pathname}>
-          <Outlet />
+          <Suspense
+            fallback={
+              <div className="page-loading" role="status">
+                Getting things ready…
+              </div>
+            }
+          >
+            <Outlet />
+          </Suspense>
         </main>
         <Footer />
       </div>

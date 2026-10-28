@@ -1,13 +1,6 @@
+import serviceCatalog from "../../../client/src/data/services.json" with { type: "json" };
 export const services = [
-  "Web design",
-  "Website development",
-  "SEO & organic growth",
-  "Digital strategy",
-  "Social media management",
-  "Ads & performance marketing",
-  "Web hosting & cloud",
-  "Branding & content",
-  "Maintenance & support",
+  ...serviceCatalog.map((service) => service.name),
   "A little bit of everything",
 ];
 export function validateInquiry(body) {
@@ -40,5 +33,15 @@ export function validateInquiry(body) {
   if (body.consent !== true)
     return { error: "Please accept the privacy notice before submitting." };
   value.consent = true;
+  if (body.requestId !== undefined) {
+    if (
+      typeof body.requestId !== "string" ||
+      !/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i.test(
+        body.requestId,
+      )
+    )
+      return { error: "Please refresh the form and try again." };
+    value.requestId = body.requestId;
+  }
   return { value };
 }

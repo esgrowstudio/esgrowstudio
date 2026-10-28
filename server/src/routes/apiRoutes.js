@@ -1,5 +1,5 @@
 import { Router } from "express";
-import mongoose from "mongoose";
+import { isSheetsConfigured, checkSheetsReady } from "../utils/googleSheets.js";
 import rateLimit from "express-rate-limit";
 import { createInquiry } from "../controllers/inquiryController.js";
 const router = Router();
@@ -13,10 +13,16 @@ const inquiryLimit = rateLimit({
 router.get("/health", (req, res) =>
   res.json({
     ok: true,
-    database:
-      mongoose.connection.readyState === 1 ? "connected" : "unavailable",
+    inquiryStorage: "google-sheets",
+    configured: isSheetsConfigured(),
   }),
 );
+router.get("/ready", async (req, res) => {
+  const ready = await checkSheetsReady();
+  res
+    .status(ready ? 200 : 503)
+    .json({ ready, inquiryStorage: "google-sheets" });
+});
 router.post("/inquiries", inquiryLimit, createInquiry);
 router.use((req, res) =>
   res.status(404).json({ message: "API endpoint not found." }),

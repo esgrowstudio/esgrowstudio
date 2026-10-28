@@ -1,4 +1,10 @@
 export const visuals = {
+  "connected-sculpture": {
+    alt: "A flowing sage glass ribbon connects three sculptural stone arches, an illustration of connected digital services.",
+  },
+  "conversation-space": {
+    alt: "An editorial illustration of two inviting lounge chairs in a warm sunlit space, ready for a conversation.",
+  },
   "web-design": {
     alt: "A refined website design workspace with a silver display, botanical layouts and sage colour swatches.",
   },

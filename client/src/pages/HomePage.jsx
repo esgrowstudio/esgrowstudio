@@ -8,7 +8,9 @@ export default function HomePage() {
       >
         <img
           className="atmosphere-background"
-          src="/assets/hero-laptop-studio.png"
+          src="/assets/hero-laptop-studio-1672.webp"
+          srcSet="/assets/hero-laptop-studio-640.webp 640w, /assets/hero-laptop-studio-1200.webp 1200w, /assets/hero-laptop-studio-1672.webp 1672w"
+          sizes="100vw"
           alt=""
           width="1672"
           height="941"

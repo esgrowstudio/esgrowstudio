@@ -8,7 +8,7 @@
       },
       {
         "title": "What the forms do",
-        "text": "If you submit an inquiry and the server confirms receipt, your name, email, optional business details, chosen service, message and consent are stored in the studio’s configured MongoDB database so the studio can review and respond. Downloading a brief instead creates a local file without submitting it. Avoid entering sensitive personal information."
+        "text": "If you submit an inquiry and the server confirms receipt, your name, email, optional business details, chosen service, message and consent are sent through the studio’s server to its Google Sheets enquiry register so the studio can review and respond. Downloading a brief instead creates a local file without submitting it. Avoid entering sensitive personal information."
       },
       {
         "title": "Hosting and external resources",
@@ -103,7 +103,7 @@
       },
       {
         "title": "Feedback",
-        "text": "A verified business contact channel for accessibility feedback must be added before public commercial launch."
+        "text": "For accessibility feedback, contact Esgrow Studio using the email, phone or WhatsApp Business details below."
       }
     ]
   }

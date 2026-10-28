@@ -1,3 +1,4 @@
+import CallToAction from "../components/CallToAction.jsx";
 import { Link } from "react-router-dom";
 import articles from "../data/articles.json";
 import EditorialImage from "../components/EditorialImage.jsx";
@@ -12,9 +13,9 @@ export default function BlogPage() {
           <h1>A little perspective.</h1>
         </div>
         <p>
-          Ideas for better digital experiences.
+          Useful thinking for your next business decision.
           <br />
-          Notes from the work, and the thinking behind it.
+          Explore how design, technology and marketing can work better together.
         </p>
       </section>
       <section className="journal-feature page-wrap">
@@ -49,6 +50,7 @@ export default function BlogPage() {
           ))}
         </div>
       </section>
+      <CallToAction />
     </>
   );
 }

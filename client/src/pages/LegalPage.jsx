@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import policies from "../data/policies.json";
+import ContactDetails from "../components/ContactDetails.jsx";
 export default function LegalPage({ type }) {
   const policy = policies[type];
   return (
@@ -31,6 +32,15 @@ export default function LegalPage({ type }) {
             </div>
           </section>
         ))}
+        <section>
+          <span className="document-number">
+            {String(policy.sections.length + 1).padStart(2, "0")}
+          </span>
+          <div>
+            <h2>Contact the studio</h2>
+            <ContactDetails />
+          </div>
+        </section>
       </article>
     </section>
   );

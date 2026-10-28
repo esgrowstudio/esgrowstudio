@@ -1,0 +1,141 @@
+/* Final device and interaction fixes, kept after the page themes. */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+img,
+video {
+  max-width: 100%;
+}
+main,
+section,
+article,
+form,
+fieldset {
+  min-width: 0;
+}
+.inquiry-fields {
+  display: grid;
+  gap: 17px;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.inquiry-fields:disabled {
+  opacity: 0.8;
+}
+.inquiry-form input[type="checkbox"],
+.pc-form input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  min-height: 18px;
+  padding: 0;
+  margin-top: 4px;
+  accent-color: #527f2f;
+  border-radius: 3px;
+}
+.inquiry-form input,
+.inquiry-form select,
+.inquiry-form textarea {
+  width: 100%;
+  min-width: 0;
+  font-size: 16px;
+}
+.form-status {
+  overflow-wrap: anywhere;
+}
+.page-loading {
+  min-height: 65vh;
+  display: grid;
+  place-items: center;
+  color: #61705f;
+}
+@media (max-width: 1000px) {
+  header.liquid-header nav {
+    max-height: calc(100vh - 120px);
+    max-height: calc(100dvh - 120px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  header.liquid-header nav a {
+    flex-shrink: 0;
+    min-height: 44px;
+  }
+}
+@media (max-width: 680px) {
+  header.liquid-header .menu-toggle {
+    width: 42px;
+    min-width: 42px;
+    height: 42px;
+  }
+  header.liquid-header > .button.small {
+    min-height: 42px;
+  }
+  .filter-pills button,
+  .swc-toolbar button {
+    min-height: 44px;
+  }
+  .footer-links a {
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+  }
+  .inquiry-form .actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .inquiry-form .actions .button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+@media (max-width: 370px) {
+  header.liquid-header .brand-type > span {
+    font-size: 13px;
+  }
+  header.liquid-header .brand {
+    margin-right: 4px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .motion-ready {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (hover: none) {
+  .service-tile:hover img,
+  .aa-capability:hover img,
+  .swc-project:hover img {
+    transform: none;
+  }
+}
+@media print {
+  header.liquid-header,
+  .scroll-progress,
+  .preloader,
+  .swc-group[aria-hidden="true"],
+  .atmosphere-scroll {
+    display: none !important;
+  }
+  .inner-page main {
+    padding-top: 0 !important;
+  }
+  .motion-ready,
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

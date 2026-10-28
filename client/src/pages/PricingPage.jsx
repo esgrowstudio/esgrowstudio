@@ -1,3 +1,4 @@
+import CallToAction from "../components/CallToAction.jsx";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import FaqList from "../components/FaqList.jsx";
@@ -48,9 +49,10 @@ export default function PricingPage() {
           <br />A sensible next step.
         </h1>
         <p className="lead">
-          Different businesses need different things.
+          Start with what your business needs most.
           <br />
-          We quote for the work you actually need.
+          We’ll help you prioritise the work, agree the scope and understand
+          where your investment goes.
         </p>
         <div className="filter-pills">
           {["All", "Project", "Ongoing"].map((item) => (
@@ -76,7 +78,7 @@ export default function PricingPage() {
                 <EditorialImage
                   name={
                     {
-                      Project: "website-development",
+                      Project: "connected-sculpture",
                       Growth: "performance-marketing",
                       Care: "maintenance-support",
                     }[plan.name]
@@ -164,6 +166,7 @@ export default function PricingPage() {
           ]}
         />
       </section>
+      <CallToAction />
     </>
   );
 }

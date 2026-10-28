@@ -26,6 +26,13 @@ export default function Header() {
   useEffect(() => setOpen(false), [pathname]);
   useEffect(() => {
     if (!open) return;
+    const outside = (event) => {
+      if (!headerRef.current?.contains(event.target)) setOpen(false);
+    };
+    const desktop = window.matchMedia("(min-width: 1001px)");
+    const resize = () => {
+      if (desktop.matches) setOpen(false);
+    };
     const close = (event) => {
       if (event.key === "Escape") {
         setOpen(false);
@@ -33,7 +40,13 @@ export default function Header() {
       }
     };
     document.addEventListener("keydown", close);
-    return () => document.removeEventListener("keydown", close);
+    document.addEventListener("pointerdown", outside);
+    desktop.addEventListener("change", resize);
+    return () => {
+      document.removeEventListener("keydown", close);
+      document.removeEventListener("pointerdown", outside);
+      desktop.removeEventListener("change", resize);
+    };
   }, [open]);
   useEffect(() => {
     const update = () => {

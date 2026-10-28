@@ -1,0 +1,64 @@
+.studio-contact {
+  display: grid;
+  gap: 0;
+  margin: 28px 0;
+  font-style: normal;
+  border-block: 1px solid #e2e8df;
+}
+.studio-contact > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px 0;
+  color: #263d27;
+  text-decoration: none;
+}
+.studio-contact > a + a {
+  border-top: 1px solid #eaf0e4;
+}
+.studio-contact > a > span {
+  font-size: 11px;
+  color: #6b785f;
+}
+.studio-contact strong {
+  font-size: 14px;
+  font-weight: 550;
+  overflow-wrap: anywhere;
+}
+.studio-contact > a:hover strong {
+  color: #638b31;
+}
+.studio-contact-compact {
+  border: 0;
+  margin: 23px 0 0;
+  gap: 13px;
+}
+.studio-contact-compact > a {
+  display: grid;
+  justify-content: start;
+  gap: 4px;
+  padding: 0;
+}
+.studio-contact-compact > a + a {
+  border: 0;
+}
+.studio-contact-compact > a > span {
+  font-size: 9px;
+}
+.studio-contact-compact strong {
+  font-size: 12px;
+}
+@media (max-width: 600px) {
+  .studio-contact > a {
+    align-items: start;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .studio-contact strong {
+    font-size: 13px;
+  }
+  .studio-contact-compact strong {
+    font-size: 12px;
+  }
+}

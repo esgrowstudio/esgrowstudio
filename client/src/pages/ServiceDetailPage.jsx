@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import services from "../data/services.json";
 import EditorialImage from "../components/EditorialImage.jsx";
+import ParallaxImage from "../components/ParallaxImage.jsx";
 import FaqList from "../components/FaqList.jsx";
 import CallToAction from "../components/CallToAction.jsx";
 import NotFoundPage from "./NotFoundPage.jsx";
@@ -88,7 +89,7 @@ export default function ServiceDetailPage() {
           </Link>
         </div>
         <figure className="service-detail-photo">
-          <EditorialImage name={slug} priority />
+          <ParallaxImage name={slug} priority />
           <figcaption>
             <span>{service.name}</span>
             <span>ILLUSTRATIVE SERVICE CONCEPT</span>

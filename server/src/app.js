@@ -56,7 +56,14 @@ export function createApp() {
       fs.readFileSync(path.join(buildDirectory, "routes.json"), "utf8"),
     );
     const route = req.path.replace(/\/$/, "") || "/";
-    res.status(routes.includes(route) ? 200 : 404).sendFile(filename);
+    const known = route !== "/404" && routes.includes(route);
+    const entry =
+      known && route !== "/"
+        ? path.join(buildDirectory, route, "index.html")
+        : filename;
+    res
+      .status(known ? 200 : 404)
+      .sendFile(fs.existsSync(entry) ? entry : filename);
   });
   app.use(errorHandler);
   return app;

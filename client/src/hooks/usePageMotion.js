@@ -7,7 +7,7 @@ export default function usePageMotion(pathname) {
     const main = document.getElementById("main-content");
     if (!main) return;
     const selectors =
-      ".reveal, .service-tile, .plan, .feature-story, .journal-pair > a, .article-body > section, .sitemap-grid > div, .related-services a";
+      ".reveal, .service-tile, .plan, .feature-story, .journal-pair > a, .article-body > section, .sitemap-grid > div, .related-services a, .proposal-process > div, .pricing-faq, .faq-directory > details, .service-method > div, .service-deliverables > div, .legal-body > section";
     let sequence = 0;
     const observer = new IntersectionObserver(
       (entries) => {

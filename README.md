@@ -1,55 +1,45 @@
 # Esgrow Studio
 
-A MERN agency website: React + Vite frontend, Express/Node API and Mongoose/MongoDB inquiry storage. Includes 28 routes, nine service details, portfolio concepts, journal articles, quote-based pricing, legal drafts and a custom 404 page.
+React/Vite agency website with a Node/Express API. Contact enquiries are saved to the studio’s Google Sheet through an authenticated Google Apps Script receiver. A public browser login is not required for website visitors.
 
-## Run locally
+## Local development
 
-Use Node.js 20.19+ or 22.12+. Run `npm ci`, copy `.env.example` to `.env`, and set your own `MONGODB_URI`. Then run `npm run dev` and open http://localhost:5173. The API runs on port 3000; Vite proxies `/api` to it.
+Use Node.js 20.19+ or 22.12+. Run `npm ci`, copy `.env.example` to `.env`, configure the Google Sheets receiver below, then run `npm run dev`. Open http://localhost:5173. The API runs on port 3000; Vite proxies `/api` to it.
 
-Without a database, the site still runs and inquiry submissions return an honest HTTP 503. Brief downloads remain available. No secrets are included in the repository.
+Without a configured receiver, the website runs but submissions return an honest HTTP 503. The form retains the visitor’s details and offers a local brief download. MongoDB is not required for the contact flow. Legacy MongoDB model/config files remain available but are not used by the active receiver.
+
+## Google Sheets contact flow
+
+See [the integration guide](docs/google-sheets-integration.md). The server-only configuration is:
+
+- `INQUIRY_SHEETS_URL`: the deployed Apps Script `/exec` URL.
+- `INQUIRY_SHEETS_SECRET`: a random server secret whose SHA-256 digest matches `CONFIG.secretHash` in the Apps Script receiver.
+
+Never put either setting in a `VITE_` variable, client source or Git. The `.env` file is ignored. Copy both settings into the production host’s private environment settings when deploying; local `.env` settings do not transfer automatically.
+
+Flow: visitor form → Express validation and rate limiting → authenticated Apps Script request → dedicated `Website Enquiries` tab → matching acknowledgement → success message. Stable request IDs and a script lock prevent duplicate rows when the same request is retried. Editing a form field creates a new request ID. User text is escaped before it can be interpreted as a spreadsheet formula.
+
+`GET /api/health` checks that the process is running. `GET /api/ready` verifies access to the actual Sheets destination and returns 503 when it cannot confirm readiness. Neither endpoint exposes enquiry data or credentials. Email notifications are not implemented; the team reviews the Google Sheet.
 
 ## Production
 
-Run `npm run build`, then `npm start`. Express serves the React build, correct 404 responses and the API from one origin. Set `NODE_ENV=production`, a real `MONGODB_URI` and your platform's `PORT`. Configure `TRUST_PROXY` only for your trusted reverse proxy.
+Run `npm run build`, then `npm start`. Deploy the full stack to a Node-compatible host. Express serves the build, API and direct page routes. Set `NODE_ENV=production`, your host’s `PORT`, and the two Sheets environment settings. Use HTTPS. Set `TRUST_PROXY` only for the trusted reverse proxy used by your host.
 
-Deploy the full stack to a Node-compatible host with MongoDB Atlas or another MongoDB instance. The Sites deployment is a frontend preview; it cannot run the Express process. For a separate API origin, configure the exact frontend origin in `FRONTEND_ORIGIN`, set `VITE_API_URL` before building and use HTTPS on both origins.
+For separate frontend/API hosting, set the exact frontend URL in `FRONTEND_ORIGIN` and set `VITE_API_URL` to the API origin before building. Configure your static frontend host to route known website paths to their emitted index files or the SPA entry. A frontend-only static host cannot run the enquiry API.
 
-## Editing
+## Checks
 
-The repository uses a conventional client/server structure:
+- `npm run check`: server syntax.
+- `npm test`: validation, request/receipt behavior, API routing and Sheets transport tests.
+- `npm run build`: frontend production build and known-route entry files.
+- `npm audit --omit=dev`: production dependency audit.
 
-```text
-client/
-  public/assets/       # Original website imagery
-  src/
-    components/        # Shared navigation, footer, forms and UI
-    pages/             # Individual React page layouts
-    data/              # Structured services, articles and policy copy
-    hooks/             # Route-aware motion with listener cleanup
-    styles/            # Original theme and page layouts
-server/
-  src/
-    config/            # Database configuration
-    controllers/       # Inquiry request handling
-    middleware/        # API error handling
-    models/            # Mongoose schemas
-    routes/            # Express API routing
-    utils/             # Request validation
-    app.js             # Express application
-    index.js           # Process startup and shutdown
-  tests/               # Server validation tests
-scripts/               # Production build packaging
-```
+The 35 page routes, nine service details and real project stories live in `client/src/data/routes.js`. Images have responsive WebP variants; non-home routes load separately. Motion respects reduced-motion preferences. `dist/` is generated and ignored.
 
-`dist/` is generated and ignored by Git. Known route entry files are emitted for static previews. Page layouts and interactions live in React components and hooks rather than raw HTML templates or injected script files.
+## Launch-specific items
 
-Run `npm run check`, `npm test` and `npm run build` to validate changes. The API intentionally exposes no public endpoint to read submitted inquiries.
-
-## Before commercial launch
-
-- Connect MongoDB and verify a submitted inquiry is stored. Confirm how your authorised team will review submissions; email notifications are not implemented.
-- Confirm the legal entity, business address, privacy contact and contractual terms. Legal pages are explicitly drafts.
-- Replace or retain portfolio concepts as appropriate; current work is labelled illustrative.
-- Confirm actual pricing, support commitments and provider costs in written proposals.
-
-The included WebP images were generated for this website. The site respects reduced-motion preferences.
+- Verify one labelled test enquiry appears in the Google Sheet from the deployed website.
+- Confirm the studio’s legal business identity, address, retention period and final legal wording. Current legal pages remain clearly labelled drafts.
+- Homepage review examples are visibly labelled demonstrations; replace them with approved genuine reviews before presenting them as customer endorsements.
+- Agree actual fees, deliverables and support commitments in each written proposal.
+- Keep the enquiry spreadsheet restricted to the people who need access; it contains customer contact data.

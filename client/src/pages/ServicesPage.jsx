@@ -4,6 +4,8 @@ import services from "../data/services.json";
 import CallToAction from "../components/CallToAction.jsx";
 import ServiceIcon from "../components/ServiceIcon.jsx";
 import EditorialImage from "../components/EditorialImage.jsx";
+import ParallaxImage from "../components/ParallaxImage.jsx";
+import SelectedWorkCarousel from "../components/SelectedWorkCarousel.jsx";
 const groups = {
   All: services.map((s) => s.slug),
   Build: [
@@ -18,29 +20,72 @@ const groups = {
 export default function ServicesPage() {
   const [group, setGroup] = useState("All");
   return (
-    <>
-      <section className="directory-intro page-wrap">
+    <div className="premium-services">
+      <section className="directory-intro page-wrap ps-hero">
         <div>
           <p className="eyebrow">OUR SERVICES</p>
           <h1>
-            Digital solutions.
+            Good ideas deserve
             <br />
-            <span>Real growth.</span>
+            <span>a connected approach.</span>
           </h1>
           <p className="lead">
-            We create connected digital solutions that help your business build
-            its online presence, reach the right people and move forward with
-            confidence.
+            A website that isn’t bringing enquiries? Marketing that feels
+            disconnected? We help you find the missing pieces, connect with the
+            right people and build a clearer path towards your business goals.
           </p>
+          <a className="button" href="#service-catalog">
+            Find your next step <span>↘</span>
+          </a>
         </div>
-        <div className="page-editorial-hero">
-          <EditorialImage name="website-development" priority />
-          <span className="editorial-image-label">
-            DESIGN. BUILD. GROW. <span>↗</span>
-          </span>
+        <ParallaxImage
+          name="connected-sculpture"
+          priority
+          caption="STRATEGY → DESIGN → GROWTH"
+        />
+      </section>
+      <section className="ps-directions page-wrap">
+        <div className="reveal">
+          <p className="eyebrow">START WITH WHAT YOU NEED</p>
+          <h2>
+            Different challenges.
+            <br />
+            <em>A clear way forward.</em>
+          </h2>
+        </div>
+        <div className="ps-paths">
+          {[
+            [
+              "Shape",
+              "I need a clearer brand.",
+              "Find your voice, clarify your positioning and make the right first impression.",
+            ],
+            [
+              "Build",
+              "I need a better website.",
+              "Turn your offer into an experience that’s clear, useful and easy to act on.",
+            ],
+            [
+              "Grow",
+              "I need to reach more people.",
+              "Connect search, social and campaigns around the customers you want to reach.",
+            ],
+          ].map(([filter, title, text]) => (
+            <a
+              key={filter}
+              href="#service-catalog"
+              onClick={() => setGroup(filter)}
+              className="reveal"
+            >
+              <p className="eyebrow">{filter.toUpperCase()}</p>
+              <h3>{title}</h3>
+              <p>{text}</p>
+              <span className="text-link">Explore the possibilities ↘</span>
+            </a>
+          ))}
         </div>
       </section>
-      <section className="service-catalog page-wrap">
+      <section className="service-catalog page-wrap" id="service-catalog">
         <div className="catalog-bar">
           <span>Nine ways forward.</span>
           <div className="filter-pills" aria-label="Filter services">
@@ -92,7 +137,57 @@ export default function ServicesPage() {
           <Link to="/contact">Tell us what you’re trying to solve ↗</Link>
         </p>
       </section>
+      <section className="ps-partnership page-wrap">
+        <ParallaxImage
+          name="conversation-space"
+          caption="YOUR AMBITION. A SHARED PLAN."
+        />
+        <div className="reveal">
+          <p className="eyebrow">MORE CONNECTED. LESS COMPLICATED.</p>
+          <h2>
+            You don’t need
+            <br />
+            <em>to figure it out alone.</em>
+          </h2>
+          <p>
+            We help you choose what matters now, rather than adding every
+            possible service. Your business goals, audience and budget guide the
+            plan.
+          </p>
+          <ol>
+            <li>
+              <strong>Understand the challenge.</strong> A conversation about
+              where you are and where you want to go.
+            </li>
+            <li>
+              <strong>Connect the right pieces.</strong> A focused scope, with
+              clear deliverables and priorities.
+            </li>
+            <li>
+              <strong>Build, learn and refine.</strong> Thoughtful execution and
+              a practical discussion about what comes next.
+            </li>
+          </ol>
+          <Link className="text-link" to="/contact">
+            Let’s find the right starting point ↗
+          </Link>
+        </div>
+      </section>
+      <section className="ps-work">
+        <div className="page-wrap reveal">
+          <p className="eyebrow">FROM THE PLAN TO THE REAL WORLD</p>
+          <h2>
+            See how the pieces
+            <br />
+            <em>come together.</em>
+          </h2>
+          <Link className="text-link" to="/work">
+            Explore the project stories ↗
+          </Link>
+        </div>
+        <SelectedWorkCarousel />
+      </section>
       <CallToAction compact />
-    </>
+    </div>
   );
 }

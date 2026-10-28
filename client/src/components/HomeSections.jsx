@@ -1,3 +1,4 @@
+import CallToAction from "./CallToAction.jsx";
 import { motion, useReducedMotion } from "framer-motion";
 import { Link } from "react-router-dom";
 import services from "../data/services.json";
@@ -90,8 +91,9 @@ export default function HomeSections() {
           </div>
           <div className="hr-section-aside">
             <p>
-              Your brand deserves more than a good-looking website. We connect
-              design, technology and growth to help your business move forward.
+              Great business, but not enough enquiries? We connect your website,
+              message and marketing so more of the right people can discover
+              what you do—and understand why it matters to them.
             </p>
             <Link className="hr-link" to="/services">
               Explore all 9 services <span>↗</span>
@@ -306,41 +308,7 @@ export default function HomeSections() {
         </div>
       </section>
 
-      <section
-        className="hr-finale hr-container"
-        aria-labelledby="hr-finale-title"
-      >
-        <Arrive>
-          <div className="hr-finale-inner">
-            <div className="hr-finale-copy">
-              <p className="eyebrow">LET’S MAKE YOUR NEXT MOVE MATTER</p>
-              <h2 id="hr-finale-title">
-                Ready for your
-                <br />
-                <em>next chapter?</em>
-              </h2>
-              <p>
-                A fresh idea, a new website or a bigger ambition.
-                <br />
-                Let’s find the right way forward, together.
-              </p>
-              <Link className="button" to="/contact">
-                Tell us what you’re thinking <span>↗</span>
-              </Link>
-            </div>
-            <div className="hr-finale-art">
-              <EditorialImage
-                name="botanical-growth"
-                sizes="(max-width: 680px) 90vw, 36vw"
-                decorative
-              />
-              <span className="hr-finale-caption">
-                FROM ROOTS TO RESULTS. ↗
-              </span>
-            </div>
-          </div>
-        </Arrive>
-      </section>
+      <CallToAction />
     </div>
   );
 }

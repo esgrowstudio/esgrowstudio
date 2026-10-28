@@ -1,3 +1,4 @@
+import CallToAction from "../components/CallToAction.jsx";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import FaqList from "../components/FaqList.jsx";
@@ -51,7 +52,7 @@ export default function FaqPage() {
     <>
       <section className="faq-heading page-wrap">
         <EditorialImage
-          name="contact-desk"
+          name="conversation-space"
           className="faq-editorial"
           sizes="240px"
           decorative
@@ -93,13 +94,8 @@ export default function FaqPage() {
             <Link to="/contact">ask us directly</Link>.
           </p>
         )}
-        <div className="faq-bottom">
-          <span>Still have something on your mind?</span>
-          <Link className="button yellow" to="/contact">
-            Let’s talk ↗
-          </Link>
-        </div>
       </section>
+      <CallToAction />
     </>
   );
 }

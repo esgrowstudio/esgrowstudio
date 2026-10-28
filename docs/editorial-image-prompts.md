@@ -1,0 +1,9 @@
+# Editorial image generation — October 2026
+
+Generated with the built-in imagegen tool. These are illustrative concepts, not photographs of the studio premises. Responsive WebP files are stored in client/public/assets/imagery at 320, 640 and 1200 pixels.
+
+## connected-sculpture
+Prompt: Use case: stylized-concept. Create one premium editorial 3D still-life image for ESGROW STUDIO digital agency Services page. Wide landscape composition. A sculptural translucent sage green glass ribbon travels through three ivory architectural archways on warm limestone, a brushed silver sphere and restrained lime accent, symbolising connected strategy design and growth. Museum-quality product photography, realistic frosted glass refraction, soft directional sunlight, warm off-white backdrop, sophisticated negative space, tactile subtle grain. Beautiful high budget editorial art direction. No computers, no plants, no text, no logos, no graphs. The full sculpture fits inside the frame with breathing room. Save image for website use.
+
+## conversation-space
+Prompt: Use case: photorealistic-natural. Premium editorial image for a creative digital agency contact page about beginning a conversation. Wide landscape photograph of two sculptural contemporary lounge chairs facing each other at a gentle angle, one olive sage green upholstered chair and one ivory boucle chair, a small low brushed steel round table between them with an open blank notebook and clear glass of water. Quiet sunlit architectural alcove, warm ivory limewash walls, travertine floor, soft curved wall opening with garden shadow patterns, sophisticated minimalist hospitality editorial photography. Human welcoming warmth without people. Different from conventional laptop desk imagery. Tactile materials, subtle natural film grain, composed empty space, crisp professionally photographed realism. No screens, no text, no logos, no watermark.
