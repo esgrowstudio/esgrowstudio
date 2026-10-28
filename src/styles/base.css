@@ -1405,18 +1405,6 @@ footer {
   letter-spacing: -1.7vw;
   line-height: 1.03;
 }
-.scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 3px;
-  width: 100%;
-  background: #d5e66b;
-  transform: scaleX(0);
-  transform-origin: left;
-  z-index: 100;
-  pointer-events: none;
-}
 .service-art {
   overflow: hidden;
   border-radius: 26px;
@@ -1931,9 +1919,6 @@ header .brand-studio {
 .hero-image {
   background-position: center 52%;
 }
-.scroll-progress {
-  z-index: 60;
-}
 .menu-toggle {
   border-radius: 50%;
 }
@@ -2045,9 +2030,6 @@ header .brand-studio {
   }
   .hero-image {
     transform: none !important;
-  }
-  .scroll-progress {
-    display: none;
   }
 }
 

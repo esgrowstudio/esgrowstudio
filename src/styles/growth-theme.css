@@ -206,10 +206,6 @@ summary:focus-visible {
   opacity: 1;
   transform: none;
 }
-.scroll-progress {
-  height: 2px;
-  background: #8bc62a;
-}
 
 /* A compact glass navigation keeps the same silhouette across every route. */
 header,

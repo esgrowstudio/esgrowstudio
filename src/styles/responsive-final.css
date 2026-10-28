@@ -124,7 +124,6 @@ fieldset {
 }
 @media print {
   header.liquid-header,
-  .scroll-progress,
   .preloader,
   .swc-group[aria-hidden="true"],
   .atmosphere-scroll {

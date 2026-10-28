@@ -6,7 +6,7 @@ import EditorialImage from "../components/EditorialImage.jsx";
 const answers = [
   {
     q: "How do we get started?",
-    a: "Tell us about your business and goals on the contact page. You can submit an inquiry when delivery is available or download a brief to keep.",
+    a: "Tell us about your business and goals using the contact form, or get in touch by email, phone or WhatsApp. We’ll help you work out the next step.",
     group: "Getting started",
   },
   {

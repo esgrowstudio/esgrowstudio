@@ -149,7 +149,7 @@ export default function ContactPage() {
             ],
             [
               "How can I send you a project brief?",
-              "Use the form to share the essentials, or email your brief to esgrowstudio@gmail.com. The form’s download option saves a local copy; it does not send your enquiry.",
+              "Use the form to share the essentials, or email your brief to esgrowstudio@gmail.com. You’ll see a confirmation after your form enquiry has been received.",
             ],
           ].map(([q, a]) => (
             <details key={q}>
