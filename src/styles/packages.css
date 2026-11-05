@@ -1,7 +1,7 @@
 .packages-page {
-  --package-ink: #18291d;
-  --package-muted: #50634f;
-  --package-line: #d8e2d1;
+  --package-ink: var(--ink);
+  --package-muted: var(--muted);
+  --package-line: var(--line);
 }
 .packages-hero {
   padding-block: clamp(42px, 7vw, 110px) clamp(32px, 5vw, 72px);
@@ -17,7 +17,7 @@
   margin: 20px 0;
 }
 .packages-hero h1 em {
-  color: #52733d;
+  color: #5c7645;
 }
 .packages-lead {
   max-width: 55ch;
@@ -41,18 +41,18 @@
   border: 1px solid var(--package-line);
   border-top: 4px solid #8b9c88;
   border-radius: 24px;
-  background: #fff;
+  background: #fbfcf8;
   color: var(--package-ink);
   box-shadow: 0 12px 28px #1a302109;
 }
 .package-growth {
   border-color: #8eb260;
   border-top-color: #638c39;
-  background: linear-gradient(155deg, #eef7e1, #fff 60%);
+  background: linear-gradient(155deg, #edf3e7, #fbfcf8 60%);
   box-shadow: 0 14px 34px #36532416;
 }
 .package-premium {
-  border-top-color: #b28a43;
+  border-top-color: #6e845c;
 }
 .package-label {
   display: flex;
@@ -157,11 +157,16 @@
 .packages-programme-inner {
   border-radius: 24px;
   padding: clamp(24px, 4.5vw, 66px);
-  background: #173327;
-  color: #f3faed;
+  border: 1px solid var(--package-line);
+  background:
+    linear-gradient(0deg, #f4f6ef 42%, #f4f6ef00 82%),
+    linear-gradient(90deg, #f4f6ef 50%, #f4f6ef00 100%),
+    #f4f6ef url("/assets/imagery/pricing-programme.webp") right center / cover
+      no-repeat;
+  color: var(--package-ink);
 }
 .packages-programme-inner .eyebrow {
-  color: #c5e5a5;
+  color: #496238;
 }
 .packages-programme h2,
 .packages-faq h2 {
@@ -171,7 +176,7 @@
   margin: 12px 0;
 }
 .packages-programme p {
-  color: #dce9d7;
+  color: var(--package-muted);
   max-width: 68ch;
 }
 .packages-programme ol {
@@ -183,11 +188,11 @@
   list-style: none;
 }
 .packages-programme li {
-  border-top: 1px solid #91ac91;
+  border-top: 1px solid #cbd8c3;
   padding-top: 12px;
 }
 .packages-programme li span {
-  color: #c5e5a5;
+  color: #496238;
   font-weight: 700;
   font-size: 0.8rem;
 }
@@ -213,6 +218,12 @@
   }
 }
 @media (max-width: 600px) {
+  .packages-programme-inner {
+    background:
+      linear-gradient(0deg, #f4f6ef 50%, #f4f6efcc 100%),
+      #f4f6ef url("/assets/imagery/pricing-programme.webp") right top / auto
+        230px no-repeat;
+  }
   .packages-programme ol {
     grid-template-columns: 1fr;
     gap: 12px;
