@@ -15,18 +15,51 @@ const LegalPage = lazy(() => import("./pages/LegalPage.jsx"));
 const FaqPage = lazy(() => import("./pages/FaqPage.jsx"));
 const SitemapPage = lazy(() => import("./pages/SitemapPage.jsx"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage.jsx"));
-import { routes } from "./data/routes.js";
+import { getMetadata, socialImage } from "./data/seo.js";
 function Metadata() {
   const { pathname } = useLocation();
   useEffect(() => {
-    const page = routes.find(
-      (r) => r.path === (pathname.replace(/\/$/, "") || "/"),
+    const { title, description, canonical } = getMetadata(pathname);
+    document.title = title;
+    const update = (tag, attr, key, field, value) => {
+      let element = document.head.querySelector(`${tag}[${attr}="${key}"]`);
+      if (!value) {
+        element?.remove();
+        return;
+      }
+      if (!element) {
+        element = document.createElement(tag);
+        element.setAttribute(attr, key);
+        document.head.append(element);
+      }
+      element.setAttribute(field, value);
+    };
+    update("meta", "name", "description", "content", description);
+    update("link", "rel", "canonical", "href", canonical);
+    update("meta", "name", "robots", "content", canonical ? null : "noindex");
+    for (const [key, value] of Object.entries({
+      title,
+      description,
+      url: canonical,
+      image: socialImage,
+      type: "website",
+      site_name: "Esgrow Studio",
+    })) {
+      update(
+        "meta",
+        "property",
+        "og:" + key,
+        "content",
+        canonical ? value : null,
+      );
+    }
+    update(
+      "meta",
+      "name",
+      "twitter:card",
+      "content",
+      canonical ? "summary_large_image" : null,
     );
-    document.title = (page?.title || "Page not found") + " — Esgrow Studio";
-    document.querySelector('meta[name="description"]').content =
-      page?.description ||
-      (page?.title || "Page not found") +
-        ". Thoughtful design, development and connected digital growth from Esgrow Studio.";
   }, [pathname]);
   return null;
 }

@@ -91,9 +91,10 @@ export default function HomeSections() {
           </div>
           <div className="hr-section-aside">
             <p>
-              Great business, but not enough enquiries? We connect your website,
-              message and marketing so more of the right people can discover
-              what you do—and understand why it matters to them.
+              Looking for a digital marketing agency in Jalandhar? We help
+              businesses across Punjab and India get discovered through website
+              development, social media marketing, video shoots, branding and
+              paid campaigns built around real enquiries.
             </p>
             <Link className="hr-link" to="/services">
               Explore all 9 services <span>↗</span>
