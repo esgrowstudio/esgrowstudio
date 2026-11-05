@@ -7,12 +7,13 @@ export function Brand() {
   return (
     <Link to="/" className="brand" aria-label="Esgrow Studio home">
       <BrandMark className="brand-logo" />
-      <span className="brand-type" data-adaptive-ink>
-        <span>
-          ES<span>GROW</span> STUDIO
-        </span>
-        <small>FROM ROOTS TO RESULTS</small>
-      </span>
+      <img
+        className="brand-wordmark"
+        src="/assets/esgrow-wordmark.webp"
+        width="640"
+        height="123"
+        alt=""
+      />
     </Link>
   );
 }
