@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import CallToAction from "../components/CallToAction.jsx";
 import FaqList from "../components/FaqList.jsx";
+import EditorialImage from "../components/EditorialImage.jsx";
 import "../styles/packages.css";
 
 const plans = [
@@ -98,19 +99,31 @@ export default function PricingPage() {
   return (
     <div className="packages-page">
       <section className="packages-hero page-wrap">
-        <p className="eyebrow">ESGROW STUDIO / PRICING</p>
-        <h1>
-          Build your presence.
-          <br />
-          <em>Grow with a plan.</em>
-        </h1>
-        <p className="packages-lead">
-          Three packages for different stages of business, from your first
-          website to a full campaign with original content.
-        </p>
-        <a className="text-link" href="#packages">
-          Explore the packages ↓
-        </a>
+        <div className="packages-hero-panel">
+          <div className="packages-hero-copy">
+            <p className="eyebrow">ESGROW STUDIO / PRICING</p>
+            <h1>
+              Build your presence.
+              <em>Grow with a plan.</em>
+            </h1>
+            <p className="packages-lead">
+              Three packages for different stages of business, from your first
+              website to a full campaign with original content.
+            </p>
+            <a className="button yellow" href="#packages">
+              Explore the packages <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+          <figure className="packages-hero-visual">
+            <EditorialImage
+              name="connected-sculpture"
+              priority
+              decorative
+              sizes="(max-width: 850px) 84vw, 42vw"
+            />
+            <figcaption>Starter · Growth · Premium</figcaption>
+          </figure>
+        </div>
       </section>
 
       <section

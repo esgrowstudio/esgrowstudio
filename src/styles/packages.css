@@ -4,26 +4,66 @@
   --package-line: var(--line);
 }
 .packages-hero {
-  padding-block: clamp(42px, 7vw, 110px) clamp(32px, 5vw, 72px);
-  text-align: center;
+  padding-block: clamp(24px, 4vw, 60px) clamp(30px, 4vw, 56px);
 }
-.packages-hero .eyebrow {
-  justify-content: center;
+.packages-hero-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 44px);
+  padding: clamp(12px, 1.65vw, 26px);
+  background: linear-gradient(130deg, #fbfcf8, #edf3e7);
+  border: 1px solid var(--package-line);
+  border-radius: 28px;
+}
+.packages-hero-copy {
+  align-self: center;
+  padding: clamp(18px, 2.5vw, 44px);
 }
 .packages-hero h1 {
-  font-size: clamp(2.55rem, 7.1vw, 7.4rem);
-  line-height: 0.99;
-  letter-spacing: -0.065em;
-  margin: 20px 0;
+  font-size: clamp(2.25rem, 4.15vw, 4.85rem);
+  line-height: 1.02;
+  letter-spacing: -0.06em;
+  margin: 18px 0;
 }
 .packages-hero h1 em {
+  display: block;
   color: #5c7645;
 }
 .packages-lead {
-  max-width: 55ch;
-  margin: 0 auto 22px;
+  max-width: 44ch;
+  margin: 0 0 24px;
   color: var(--package-muted);
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  line-height: 1.65;
+}
+.packages-hero-visual {
+  position: relative;
+  min-height: 340px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #e9e8de;
+}
+.packages-hero-visual picture,
+.packages-hero-visual img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.packages-hero-visual img {
+  object-fit: cover;
+}
+.packages-hero-visual figcaption {
+  position: absolute;
+  inset: auto 14px 14px auto;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #fbfcf8;
+  color: var(--package-ink);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
 }
 .packages-section {
   scroll-margin-top: 112px;
@@ -209,6 +249,14 @@
   border-bottom: 1px solid var(--package-line);
 }
 @media (max-width: 850px) {
+  .packages-hero-panel {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .packages-hero-visual {
+    min-height: 0;
+    aspect-ratio: 3 / 2;
+  }
   .packages-grid {
     grid-template-columns: 1fr;
   }
@@ -230,17 +278,12 @@
   }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .packages-hero > * {
+  .packages-hero-copy,
+  .packages-hero-visual {
     animation: package-enter 0.55s ease both;
   }
-  .packages-hero > :nth-child(2) {
-    animation-delay: 0.06s;
-  }
-  .packages-hero > :nth-child(3) {
+  .packages-hero-visual {
     animation-delay: 0.12s;
-  }
-  .packages-hero > :nth-child(4) {
-    animation-delay: 0.18s;
   }
 }
 @keyframes package-enter {
