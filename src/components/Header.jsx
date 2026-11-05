@@ -82,6 +82,7 @@ export default function Header() {
           ["Home", "/"],
           ["Services", "/services"],
           ["Our work", "/work"],
+          ["Pricing", "/pricing"],
           ["About", "/about"],
           ["Insights", "/blog"],
         ].map(([name, to]) => (
