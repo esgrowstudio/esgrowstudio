@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import CallToAction from "../components/CallToAction.jsx";
 import FaqList from "../components/FaqList.jsx";
-import EditorialImage from "../components/EditorialImage.jsx";
 import "../styles/packages.css";
 
 const plans = [
@@ -98,8 +97,19 @@ const questions = [
 export default function PricingPage() {
   return (
     <div className="packages-page">
-      <section className="packages-hero page-wrap">
-        <div className="packages-hero-panel">
+      <section className="packages-hero">
+        <img
+          className="packages-hero-image"
+          src="/assets/imagery/pricing-leaves-1672.webp"
+          srcSet="/assets/imagery/pricing-leaves-960.webp 960w, /assets/imagery/pricing-leaves-1672.webp 1672w"
+          sizes="(max-width: 600px) 960px, 100vw"
+          width="1672"
+          height="941"
+          alt=""
+          fetchPriority="high"
+          decoding="async"
+        />
+        <div className="packages-hero-panel page-wrap">
           <div className="packages-hero-copy">
             <p className="eyebrow">ESGROW STUDIO / PRICING</p>
             <h1>
@@ -114,15 +124,6 @@ export default function PricingPage() {
               Explore the packages <span aria-hidden="true">↓</span>
             </a>
           </div>
-          <figure className="packages-hero-visual">
-            <EditorialImage
-              name="connected-sculpture"
-              priority
-              decorative
-              sizes="(max-width: 850px) 84vw, 42vw"
-            />
-            <figcaption>Starter · Growth · Premium</figcaption>
-          </figure>
         </div>
       </section>
 
