@@ -7,7 +7,6 @@ const plans = [
   {
     id: "starter",
     name: "Starter",
-    price: "39,999",
     tagline: "Launch your online presence",
     description:
       "For businesses and independent professionals who need a website and the essentials to get discovered.",
@@ -29,7 +28,7 @@ const plans = [
   {
     id: "growth",
     name: "Growth",
-    price: "74,999",
+    adDays: 45,
     tagline: "Run a 45-day growth programme",
     description:
       "For businesses ready to combine a stronger brand, original content and active promotion.",
@@ -53,7 +52,7 @@ const plans = [
   {
     id: "premium",
     name: "Premium",
-    price: "99,999",
+    adDays: 60,
     tagline: "Produce more. Go deeper.",
     description:
       "For businesses that need more content, deeper campaign support and a programme shaped around their priorities.",
@@ -64,7 +63,7 @@ const plans = [
         "Ten edited reels in place of Growth’s four, with more room for creative concepts, storytelling and production polish.",
       ],
       [
-        "Advanced campaign support",
+        "60 days of managed Meta Ads with advanced support",
         "More room to test audience segments, creative angles and messaging, with deeper performance reviews and optimisation.",
       ],
       [
@@ -78,7 +77,7 @@ const plans = [
 const questions = [
   {
     q: "Is the Meta ad budget included?",
-    a: "Yes. Growth’s first 45 days of Meta ad spend come out of the ₹74,999 package price. Premium inherits that 45-day inclusion. We agree the media allocation before launch. Starter includes campaign setup and launch; its media budget is separate. Spend beyond the included period is agreed separately.",
+    a: "Yes. Growth includes the first 45 days of Meta ad spend, and Premium includes the first 60 days. We agree the media allocation before launch. Starter includes campaign setup and launch; its media budget is separate. Spend beyond the included period is agreed separately.",
   },
   {
     q: "What happens if the ads aren’t bringing in leads?",
@@ -147,14 +146,11 @@ export default function PricingPage() {
                 )}
               </div>
               <h2>{plan.name}</h2>
-              <p className="package-price">
-                ₹{plan.price} <span>INR / package</span>
-              </p>
               <h3>{plan.tagline}</h3>
               <p>{plan.description}</p>
-              {plan.id !== "starter" && (
+              {plan.adDays && (
                 <p className="package-spend">
-                  First 45 days of Meta ad spend included
+                  First {plan.adDays} days of Meta ad spend included
                 </p>
               )}
               {plan.includes && (
@@ -178,8 +174,8 @@ export default function PricingPage() {
           ))}
         </div>
         <p className="packages-note">
-          All prices are in INR. We confirm deliverables, applicable taxes and
-          any optional costs in your proposal before work begins.
+          We confirm deliverables, applicable taxes and any optional costs in
+          your proposal before work begins.
         </p>
       </section>
 
@@ -188,7 +184,7 @@ export default function PricingPage() {
         aria-labelledby="programme-title"
       >
         <div className="packages-programme-inner">
-          <p className="eyebrow">INSIDE THE 45-DAY PROGRAMME</p>
+          <p className="eyebrow">INSIDE THE CAMPAIGN PROGRAMME</p>
           <h2 id="programme-title">Launch. Learn. Refine.</h2>
           <p>
             Growth and Premium pair content production with active Meta campaign

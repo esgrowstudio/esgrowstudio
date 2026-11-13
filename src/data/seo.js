@@ -17,7 +17,7 @@ const pages = {
   ],
   "/pricing": [
     "Website & Digital Marketing Packages",
-    "Compare Starter, Growth and Premium packages for websites, social media, on-location video shoots and managed Meta Ads. Plans from ₹39,999.",
+    "Compare Starter, Growth and Premium packages for websites, social media, on-location video shoots and managed Meta Ads.",
   ],
   "/about": [
     "About Our Digital Agency",
